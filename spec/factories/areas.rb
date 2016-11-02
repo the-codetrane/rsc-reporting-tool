@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :area do
-    name 'Downtown Area'
-    county 'Philadelphia'
+    name Faker::Address.city << ' Area'
+    county Faker::Address.city
     user nil
   end
 end
