@@ -1,4 +1,4 @@
 class Group < ApplicationRecord
   belongs_to :area
-  has_many: :users
+  has_many :users
 end

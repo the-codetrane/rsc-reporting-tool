@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'faker'
+  gem 'guard-rspec'
 end
 
 group :development do
