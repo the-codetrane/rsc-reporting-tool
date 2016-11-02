@@ -6,8 +6,6 @@
 
 **This tool is designed to make minutes from areas and regional service subcommittees easy to create and share among trusted servants.**
 
----
-
 _With this this tool, you'll be able to:_
 
 - quickly create reports for your committee
