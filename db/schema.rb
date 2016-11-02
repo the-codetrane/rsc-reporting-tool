@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102005922) do
+ActiveRecord::Schema.define(version: 20161102010929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20161102005922) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_areas_on_user_id", using: :btree
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "area_id"
+    t.date     "anniversary"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["area_id"], name: "index_groups_on_area_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +53,5 @@ ActiveRecord::Schema.define(version: 20161102005922) do
   end
 
   add_foreign_key "areas", "users"
+  add_foreign_key "groups", "areas"
 end
