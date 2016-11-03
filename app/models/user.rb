@@ -7,6 +7,5 @@ class User < ApplicationRecord
   attr_accessor :email, :first_name, :last_name
 
   belongs_to :group
-  validates :email, uniqueness: true
-  validates :first_name, :password, :email, presence: true
+
 end
