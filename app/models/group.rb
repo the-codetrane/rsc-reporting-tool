@@ -2,6 +2,6 @@ class Group < ApplicationRecord
   belongs_to :area
   has_many :users
 
-  validates :name, :anniversary, presence: true
-  validates :name, :anniversary, uniqueness: true
+  validates :name, presence: true
+  validates :name, uniqueness: true
 end

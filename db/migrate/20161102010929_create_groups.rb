@@ -3,7 +3,6 @@ class CreateGroups < ActiveRecord::Migration[5.0]
     create_table :groups do |t|
       t.string :name
       t.references :area, foreign_key: true
-      t.date :anniversary
 
       t.timestamps
     end
