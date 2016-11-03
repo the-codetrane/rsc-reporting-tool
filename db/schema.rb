@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(version: 20161103204940) do
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.integer  "area_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.date     "anniversary", default: '2015-01-01'
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["area_id"], name: "index_groups_on_area_id", using: :btree
   end
 

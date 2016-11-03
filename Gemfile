@@ -10,8 +10,9 @@ gem 'turbolinks'
 gem 'sdoc', '>= 0.4.0', group: :doc
 gem 'bcrypt', '>= 3.1.7'
 gem 'pg'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 # Use Unicorn as the app server
 gem 'unicorn'

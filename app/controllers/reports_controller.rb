@@ -1,6 +1,10 @@
 class ReportsController < ApplicationController
   def index
     @reports = Report.all
+    respond_to do |format|
+      format.html
+      format.json {@reports.to_json}
+    end
   end
 
   def show
