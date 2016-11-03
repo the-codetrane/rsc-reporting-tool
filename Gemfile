@@ -31,6 +31,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'guard-rspec'
+  gem 'launchy'
 end
 
 group :development do
