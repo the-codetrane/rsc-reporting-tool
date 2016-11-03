@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Authorization' do
+feature 'Registration' do
   scenario 'User signs up successfully' do
 
     visit '/users/sign_up'
@@ -37,5 +37,7 @@ feature 'Authorization' do
     click_on 'Sign up'
 
     expect(page).to have_content('First name can\'t be blank')
+
+
   end
 end
