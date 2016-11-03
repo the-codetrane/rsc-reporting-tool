@@ -16,6 +16,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use Unicorn as the app server
 gem 'unicorn'
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
