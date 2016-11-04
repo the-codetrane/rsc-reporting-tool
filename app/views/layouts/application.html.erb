@@ -8,13 +8,8 @@
 </head>
 <body>
 <%= render 'nav/nav' %>
-<% if notice %>
-    <p class="notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p class="alert"><%= alert %></p>
-<% end %>
-<%= render partial: "shared/flash_messages", flash: flash %>
+
+<%= render partial: 'shared/flash_messages', flash: flash %>
 <div class="container-fluid">
   <%= yield %>
 </div>
