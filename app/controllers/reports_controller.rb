@@ -12,7 +12,8 @@ class ReportsController < ApplicationController
   end
 
   def new
-    @report = Report.new(report_params)
+    @current_user = current_user
+    @report = Report.new
   end
 
   def create

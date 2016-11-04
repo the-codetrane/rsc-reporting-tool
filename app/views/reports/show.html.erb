@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <h2>
+      <%= @report.title %>
+    </h2>
+  </div>
+  <div class="row">
+    <h3>
+      <%= @report.committee %>
+    </h3>
+  </div>
+  <div class="row">
+    <h3>Committee Attendees:</h3>
+    <p><%= @report.attendees %></p>
+  </div>
+  <div class="row">
+    <h5>Old Business:</h5>
+    <p> <%= @report.old_business %></p>
+  </div>
+  <div class="row">
+    <h5>New Business:</h5>
+    <p> <%= @report.new_business %></p>
+  </div>
+  <div class="row">
+    <h5>Notes:</h5>
+    <p> <%= @report.old_business %></p>
+  </div>
+</div>
