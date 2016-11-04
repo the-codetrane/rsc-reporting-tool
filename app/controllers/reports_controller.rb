@@ -12,7 +12,6 @@ class ReportsController < ApplicationController
   end
 
   def new
-    @current_user = current_user
     @report = Report.new
   end
 
@@ -20,10 +19,11 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
 
     if @report.save
-      redirect_to :index
+      flash[:success] = 'Your Report Has Been Submitted'
+      redirect_to reports_path
     else
       flash[:alert] = 'record did not save'
-      redirect_to :new
+      redirect_to new_report_path
     end
   end
 
