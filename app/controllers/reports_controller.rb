@@ -16,7 +16,7 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.new
+    @report = Report.new(report_params)
 
     if @report.save
       redirect_to :index

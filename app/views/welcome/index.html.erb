@@ -1,1 +1,15 @@
-<h1>This is the Welcome Landing page</h1>
+<div class="jumbotron" id="welcome-header">
+  <h1 class="welcome-text">Welcome to the RSC Meeting Report Tool</h1>
+  <p class="welcome-text"> This tool is designed to make creating and submitting reports for your area/subcommittee
+    simple and easy!</p>
+</div>
+<div id="welcome-body">
+  <div class="row center-block">
+    <div class="col-md-3 col-md-offset-3">
+      <%= link_to 'Submit A New Report', new_report_path, class: 'btn btn-primary btn-block' %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to 'Find A Submitted Report', new_report_path, class: 'btn btn-info btn-block' %>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103204940) do
+ActiveRecord::Schema.define(version: 20161104181605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,17 @@ ActiveRecord::Schema.define(version: 20161103204940) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "committees", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.integer  "area_id"
-    t.date     "anniversary", default: '2015-01-01'
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_groups_on_area_id", using: :btree
   end
 
@@ -57,13 +62,15 @@ ActiveRecord::Schema.define(version: 20161103204940) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "groups_id"
     t.integer  "group_id"
+    t.integer  "committee_id"
+    t.index ["committee_id"], name: "index_users_on_committee_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["groups_id"], name: "index_users_on_groups_id", using: :btree
+    t.index ["group_id"], name: "index_users_on_group_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "groups", "areas"
-  add_foreign_key "users", "groups", column: "groups_id"
+  add_foreign_key "users", "committees"
+  add_foreign_key "users", "groups"
 end
