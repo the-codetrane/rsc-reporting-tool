@@ -14,6 +14,7 @@
 <% if alert %>
     <p class="alert"><%= alert %></p>
 <% end %>
+<%= render partial: "shared/flash_messages", flash: flash %>
 <div class="container-fluid">
   <%= yield %>
 </div>
