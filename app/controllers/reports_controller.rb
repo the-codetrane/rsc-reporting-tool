@@ -27,6 +27,18 @@ class ReportsController < ApplicationController
     end
   end
 
+  def update
+    @report = Report.update(report_params)
+
+    if @report
+      flash[:success] = 'Your Report Has Been Updated'
+      redirect_to reports_path
+    else
+      flash[:alert] = 'Something went wrong. Please try again'
+      redirect_to new_report_path
+    end
+  end
+
   def edit
     @report = Report.find(params[:id])
   end
