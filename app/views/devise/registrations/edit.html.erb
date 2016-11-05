@@ -14,8 +14,12 @@
           <%= f.text_field :last_name, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: "form-control" %>
+          <%= f.label :group_id %>
+          <%= f.select :group_id, devise_group_select, {}, {class: "form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :committee_id %>
+          <%= f.select :committee_id, devise_committee_select, {}, {class: "form-control"} %>
         </div>
         <div class="form-group">
           <%= f.label :email %>
