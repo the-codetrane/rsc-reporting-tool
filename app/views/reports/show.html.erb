@@ -26,6 +26,8 @@
     <p> <%= @report.old_business %></p>
   </div>
   <div class="row">
-    <p id="report-signature"><%= report_signature(User.find_by_email(@report.created_by)) %></p>
+    <% if @report.created_by %>
+        <p id="report-signature"><%= report_signature(User.find_by_email(@report.created_by)) %></p>
+    <% end %>
   </div>
 </div>
