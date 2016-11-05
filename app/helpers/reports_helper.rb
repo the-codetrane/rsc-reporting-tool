@@ -15,4 +15,5 @@ module ReportsHelper
     user = User.find_by_email(email)
     "#{user.na_name} from #{user.group.name}"
   end
+
 end

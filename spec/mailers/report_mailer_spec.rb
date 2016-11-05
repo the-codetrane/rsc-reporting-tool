@@ -1,5 +1,13 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe ReportMailerMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ReportsMailer do
+
+  let(:user) {FactoryGirl.create_list(:user, 5)}
+  let(:committee) {FactoryGirl.create(:committee)}
+  let(:report) {FactoryGirl.create(:report)}
+
+  it 'sends a report to all committee members' do
+
+  end
+
 end
