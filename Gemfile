@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.0.0'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
@@ -24,9 +23,8 @@ gem 'devise-bootstrap-views'
 gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
   gem 'factory_girl_rails'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'database_cleaner'
@@ -35,6 +33,7 @@ group :development, :test do
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'puma'
 end
 
 group :development do

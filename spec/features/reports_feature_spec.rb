@@ -11,6 +11,6 @@ feature 'Reports Dashboard' do
     sign_up
     click_link 'Submit A New Report'
 
-    expect(page).to have_content('New report for')
+    expect(page).to have_content('New Report Form')
   end
 end

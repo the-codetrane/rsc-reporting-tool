@@ -25,4 +25,7 @@
     <h5>Notes:</h5>
     <p> <%= @report.old_business %></p>
   </div>
+  <div class="row">
+    <p id="report-signature"><%= report_signature(User.find_by_email(@report.created_by)) %></p>
+  </div>
 </div>

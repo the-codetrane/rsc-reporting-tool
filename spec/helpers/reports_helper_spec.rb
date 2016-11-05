@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ReportsHelper. For example:
-#
-# describe ReportsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe ReportsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ReportsHelper do
+  it 'returns an array of selections for Committee' do
+    expect(committee_select).to be_a(Array)
+  end
+
+  it 'returns a signature for reports' do
+
+    group = FactoryGirl.create(:group)
+    user = FactoryGirl.create(:user)
+    user.update(group_id: group.id)
+    response = report_signature(user)
+    expect(response).to include(user.first_name)
+  end
 end

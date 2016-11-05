@@ -8,4 +8,7 @@ class User < ApplicationRecord
   belongs_to :committee
   validates :first_name, presence: true
 
+  def last_name_intitial
+    self.last_name.ch
+  end
 end
