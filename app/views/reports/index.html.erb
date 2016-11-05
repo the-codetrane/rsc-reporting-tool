@@ -9,7 +9,8 @@
     <th> Committee</th>
     <th> Submitted</th>
     <th> Last Updated At</th>
-    <th> Edit Report </th>
+    <th> Submitted By</th>
+    <th> Edit Report</th>
   </tr>
   </thead>
   <tbody>
@@ -19,10 +20,15 @@
         <td><%= r.committee %></td>
         <td><%= r.created_at.strftime('%b %d, %Y') %></td>
         <td><%= r.updated_at.strftime('%b %d, %Y') %></td>
+        <% if r.created_by %>
+            <td> <%= reports_submitted_by(r.created_by) %></td>
+        <% else %>
+            <td> submitter unknown</td>
+        <% end %>
         <% if r.created_by == current_user.email %>
-        <td><%= link_to 'Edit Report', edit_report_path(r) %></td>
-            <% else %>
-        <td></td>
+            <td><%= link_to 'Edit Report', edit_report_path(r) %></td>
+        <% else %>
+            <td></td>
         <% end %>
       </tr>
   <% end %>
