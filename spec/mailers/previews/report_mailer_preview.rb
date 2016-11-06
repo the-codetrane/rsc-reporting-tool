@@ -1,4 +1,8 @@
-# Preview all emails at http://localhost:3000/rails/mailers/report_mailer
+# Preview all emails at
 class ReportMailerPreview < ActionMailer::Preview
+  def report_email
+    committee = Committee.first
+    ReportsMailer.report_email(committee)
+  end
 
 end

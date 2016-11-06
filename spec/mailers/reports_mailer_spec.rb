@@ -14,8 +14,8 @@ describe ReportsMailer do
     let(:mail) {ReportsMailer.report_email(committee)}
 
     it 'sends a report to all committee members' do
-      expect(mail.subject).to eq("#{committee.name} Report")
-      expect(mail.to).to eq("#{users.pluck(:email)}")
+      expect(mail.subject).to include("#{committee.name} Report")
+      expect(mail.to).to eq(users.pluck(:email).reverse)
     end
   end
 end
