@@ -5,6 +5,6 @@ class ReportsMailer < ApplicationMailer
   def report_email(committee)
     @committee = committee
     @recipients = User.where(committee_id: committee.id).pluck(:email)
-    mail(to: @recipients, subject: "#{committee.name} Report, #{Date.now.strftime('%b %d, %Y')}")
+    mail(to: @recipients, subject: "#{committee.name} Report, #{Date.today.strftime('%b %d, %Y')}")
   end
 end

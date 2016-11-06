@@ -6,6 +6,6 @@ FactoryGirl.define do
     new_business Faker::Hipster.paragraph
     notes Faker::Hipster.paragraph
     created_by ENV['USER_EMAIL']
-    committee_id Random.rand(20)
+    committee_id nil
   end
 end
