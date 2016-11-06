@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'dotenv-rails'
+gem 'roadie'
 
 # Use Unicorn as the app server
 gem 'unicorn'

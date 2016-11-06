@@ -1,6 +1,11 @@
 <%= @report.title %>
 
-In Attendance: <%= @report.attendees %>
+<%= @report.mailer_submitted_by %>
+
+In Attendance:
+--------------
+
+<%= @report.attendees %>
 
 Old Business:
 -------------

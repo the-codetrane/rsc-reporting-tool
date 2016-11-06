@@ -74,6 +74,8 @@ GEM
       xpath (~> 2.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    css_parser (1.4.6)
+      addressable
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -204,6 +206,9 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    roadie (3.2.0)
+      css_parser (~> 1.4.5)
+      nokogiri (>= 1.5.0, < 1.7.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -305,6 +310,7 @@ DEPENDENCIES
   puma
   rails (= 5.0.0)
   rails-assets-tether (>= 1.1.0)!
+  roadie
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (>= 0.4.0)
