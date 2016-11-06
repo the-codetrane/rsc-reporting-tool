@@ -2,11 +2,9 @@
   <tr>
     <td><h2><%= @report.title %></h2></td>
   </tr>
-  <% if @report.created_by %>
   <tr>
-    <td><p style="font-style: italic"> Submitted by <%= @report.mailer_submitted_by %></td>
+    <td><p style="font-style: italic"><%= @report.mailer_submitted_by %></td>
   </tr>
-  <% end %>
   <tr>
     <td><h3>In Attendance: </h3><%= @report.attendees %></td>
   </tr>
