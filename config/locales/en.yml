@@ -23,4 +23,4 @@ en:
   hello: "Hello world"
   welcome_mailer:
     welcome:
-      subject: 'Default Subject from YAML file'
+      subject: 'Welcome to the RSC Committee Reporting Tool'
