@@ -15,13 +15,14 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'dotenv-rails'
 gem 'roadie'
 
+gem 'rails_12factor', group: :production
+
 # Use Unicorn as the app server
 gem 'unicorn'
 gem 'devise'
 gem 'devise-bootstrap-views'
-
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+gem 'figaro'
+gem 'puma'
 
 group :development, :test do
   gem 'factory_girl_rails'
@@ -34,7 +35,6 @@ group :development, :test do
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
-  gem 'puma'
 end
 
 group :test do
@@ -47,6 +47,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 source 'https://rails-assets.org' do
