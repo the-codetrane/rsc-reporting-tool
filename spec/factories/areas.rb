@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :area do
-    name Faker::Address.city << ' Area'
-    county Faker::Address.city
-    user nil
+    sequence(:name) {Faker::Address.city << ' Area'}
+    sequence(:county) {Faker::Address.city}
   end
 end

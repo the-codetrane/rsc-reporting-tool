@@ -1,4 +1,7 @@
 require 'webmock/rspec'
+require 'bmlt_api'
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -14,6 +17,12 @@ RSpec.configure do |config|
     #     # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
+
+  config.before(:each) do
+    stub_request(:get, BmltApi::JSON_ENDPOINT).
+    to_return(status: 200, body: File.read("#{Rails.root}/spec/fixtures/bmlt_response_obj.json"), headers: {})
+  end
+
 
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
