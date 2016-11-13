@@ -35,6 +35,7 @@ group :development, :test do
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'webmock'
 end
 
 group :test do
