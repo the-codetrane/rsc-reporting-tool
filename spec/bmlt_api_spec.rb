@@ -12,11 +12,10 @@ describe BmltApi do
     end
 
     it 'creates or updates the Groups model' do
-      # api.query
-      # api.parse
-      # api.update_groups
-      # expect(Group.all.count).to be > 0
-      expect(Area.all.count).to eq 20
+      api.query
+      api.parse
+      api.update_groups
+      expect(Group.all.count).to be > 0
     end
   end
 end
