@@ -1,0 +1,4 @@
+query_bmlt_api:
+  cron: '0 0 * * *'
+  class: GroupsUpdateJob
+  description: 'This job hits the BMLT Semantic Server at midnight to keep the group list up to date'
