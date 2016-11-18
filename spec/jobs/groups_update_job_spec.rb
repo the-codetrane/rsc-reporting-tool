@@ -1,7 +1,9 @@
 require 'rails_helper'
+ActiveJob::Base.queue_adapter = :test
 
 describe GroupsUpdateJob do
-  it 'queues jobs accordingly' do
-    expect(GroupsUpdateJob.perform_later).to change(GroupsUpdateJob.jobs, :size).by(1)
+  it 'matches with enqueued job' do
+    GroupsUpdateJob.perform_later
+    expect(GroupsUpdateJob).to have_been_enqueued
   end
 end
