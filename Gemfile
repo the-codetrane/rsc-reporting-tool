@@ -17,13 +17,13 @@ gem 'roadie'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'redis-rails'
+gem 'whenever', :require => false
 
 gem 'rails_12factor', group: :production
 
 # Use Unicorn as the app server
 gem 'unicorn'
 gem 'devise'
-gem 'devise-bootstrap-views'
 gem 'figaro'
 gem 'puma'
 
