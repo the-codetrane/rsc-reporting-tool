@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('.datatable').DataTable({
         autoWidth: false,
         pagingType: 'full_numbers',
-        iDisplayLength: 25
+        iDisplayLength: 25,
+        order: [3, 'desc']
     });
 });

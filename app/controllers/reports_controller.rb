@@ -1,6 +1,8 @@
 class ReportsController < ApplicationController
   def index
-    @reports = Report.all
+    @reports = Report.includes(:committee).order(updated_at: :desc).all
+    @users = User.all
+    @committees = Committee.all
     respond_to do |format|
       format.html
       format.json {@reports.to_json}

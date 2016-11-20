@@ -1,7 +1,7 @@
 module ReportsHelper
   def committee_select
     selections = []
-    Committee.all.order(:name).each do |committee|
+    @committees.order(:name).each do |committee|
       selections << [committee.name, committee.id]
     end
     selections
@@ -12,7 +12,7 @@ module ReportsHelper
   end
 
   def reports_submitted_by(email)
-    user = User.find_by_email(email)
+    user = @users.find_by_email(email)
     "#{user.na_name} from #{user.group.name}"
   end
 
