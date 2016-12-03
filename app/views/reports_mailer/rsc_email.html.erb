@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <td><h1>RSC Report (<%= Date.today.freeze %>)</h1></td>
+  </tr>
+  <% @reports.each do |report| %>
+  <tr>
+    <td><h3><%= report.title %></h3></td>
+  </tr>
+  <tr>
+    <td><p style="font-style: italic"><%= report.mailer_submitted_by %></p></td>
+  </tr>
+  <tr>
+    <td><h4>In Attendance: </h4><%= report.attendees %></td>
+  </tr>
+  <tr>
+    <td><h4>Old Business</h4></td>
+  </tr>
+  <tr>
+    <td><%= report.old_business %></td>
+  </tr>
+  <tr>
+    <td><h4>New Business</h4></td>
+  </tr>
+  <tr>
+    <td><%= report.new_business %></td>
+  </tr>
+  <tr>
+    <td><h4>Notes</h4></td>
+  </tr>
+  <tr>
+    <td><%= report.notes %></td>
+  </tr>
+<% end %>
+</table>

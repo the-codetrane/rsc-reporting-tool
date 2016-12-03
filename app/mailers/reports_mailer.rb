@@ -9,6 +9,8 @@ class ReportsMailer < ApplicationMailer
   end
 
   def rsc_email
-    @reports = Report.where(created_at: (7.days.ago..Date.today))
+    @reports = Report.where(created_at: (7.days.ago..DateTime.now))
+    @recipients = User.all.pluck(:email)
+    mail(to: @recipients, subject: "RSC Committee Report - #{Date.today.strftime('%b-%Y')}")
   end
 end

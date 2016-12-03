@@ -1,0 +1,30 @@
+RSC REGIONAL REPORT
+-------------------
+
+<% @reports.each do |report| %>
+
+<%= report.title %>
+
+<%= report.mailer_submitted_by %>
+
+In Attendance:
+--------------
+
+<%= report.attendees %>
+
+Old Business:
+-------------
+
+<%= report.old_business %>
+
+New Business:
+-------------
+
+<%= report.new_business %>
+
+Notes:
+------
+
+<%= report.notes %>
+
+<% end %>

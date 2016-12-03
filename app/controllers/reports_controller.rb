@@ -54,6 +54,10 @@ class ReportsController < ApplicationController
     ReportsMailer.create_report_email(@report.committee).deliver_later
   end
 
+  def send_rsc_report_email
+    ReportsMailer.create_rsc_email.deliver_later
+  end
+
   private
 
   def report_params
