@@ -50,6 +50,10 @@ class ReportsController < ApplicationController
     Report.find(params[id]).destroy
   end
 
+  def send_committee_report_email
+    ReportsMailer.create_report_email(@report.committee).deliver_later
+  end
+
   private
 
   def report_params
