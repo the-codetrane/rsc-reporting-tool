@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   belongs_to :group
   belongs_to :committee
+  has_one :role
+
   validates :first_name, presence: true
 
   def na_name
