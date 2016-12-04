@@ -12,7 +12,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'All Reports', reports_path %></li>
-        <li><%= link_to 'Submit A Report', new_report_path %></li>
+        <% if current_user %>
+            <% if current_user.can_report %>
+            <li><%= link_to 'Submit A Report', new_report_path %></li>
+            <% end %>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
