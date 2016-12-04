@@ -6,11 +6,17 @@ class User < ApplicationRecord
 
   belongs_to :group
   belongs_to :committee
-  has_one :role
+  belongs_to :role
 
   validates :first_name, presence: true
 
   def na_name
     "#{self.first_name} #{self.last_name.chr}"
   end
+
+  def can_report
+    roles = Role.where.not(name: 'Member').pluck(:name)
+    roles.include?(self.role.name)
+  end
+
 end
