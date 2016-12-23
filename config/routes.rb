@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :admin, only: [:index, :show]
+  resources :admin
 
   #email routes
   get 'send_committee_report_email', to: 'reports#send_committee_report_email', as: 'committee_email'
