@@ -11,10 +11,12 @@ feature 'Admin Dashboard' do
   context 'Admin login' do
     let(:group) { FactoryGirl.create(:group) }
     let(:committee) { FactoryGirl.create(:committee) }
+    let(:area) { FactoryGirl.create(:area) }
 
     scenario 'Admin should see the Admin dashboard' do
       sign_up_admin
       User.last.update(group: group, committee: committee)
+      group.update(area: area)
       visit '/admin'
       expect(page).to have_content('Admin Dashboard')
     end
