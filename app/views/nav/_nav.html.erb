@@ -23,7 +23,7 @@
             <li><%= link_to "Hello, #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path,  data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %>
-            <li><%= link_to 'Sign in', new_user_registration_path %></li>
+            <li id="sign-in-nav"><%= link_to 'Sign in', new_user_session_path %></li>
         <% end %>
       </ul>
     </div>

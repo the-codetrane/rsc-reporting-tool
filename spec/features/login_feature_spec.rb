@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'Registration' do
+
+  before(:all) do
+    FactoryGirl.create_list(:admin, 4)
+    FactoryGirl.create(:role)
+  end
+
   scenario 'User signs up successfully' do
 
     visit '/users/sign_up'
@@ -37,7 +43,6 @@ feature 'Registration' do
     click_on 'Sign up'
 
     expect(page).to have_content('First name can\'t be blank')
-
 
   end
 end
