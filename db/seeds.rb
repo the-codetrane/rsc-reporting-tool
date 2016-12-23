@@ -12,5 +12,8 @@ entries.each do |entry|
   data = File.read("#{Rails.root}/export_seeds/#{entry}")
   records = JSON.parse(data)
   model = entry.split('.').first
-  records.each { |r| model.classify.constantize.create(r) }
+  records.each do |r|
+    r.delete('id')
+    model.classify.constantize.create(r)
+  end
 end
