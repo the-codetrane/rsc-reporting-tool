@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :members, only: [:show, :edit, :update]
+
+  resources :groups, only: [:show, :edit, :update]
+
   resources :reports
+
   devise_for :users
 
   root to: 'welcome#index'
