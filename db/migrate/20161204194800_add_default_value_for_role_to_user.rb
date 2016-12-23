@@ -6,4 +6,3 @@ class AddDefaultValueForRoleToUser < ActiveRecord::Migration[5.0]
   def down
     change_column :users, :role_id, :integer, default: nil
   end
-end
