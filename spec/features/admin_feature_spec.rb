@@ -25,7 +25,6 @@ feature 'Admin Dashboard' do
     let(:committee) { FactoryGirl.create(:committee) }
 
     scenario 'Regular user should not be able to see Admin dashboard' do
-      binding.pry
       sign_up_regular
       User.last.update(group: group, committee: committee)
       visit '/admin'

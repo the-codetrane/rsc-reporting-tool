@@ -1,26 +1,39 @@
 <div class="row">
   <h2 align="center">Admin Dashboard</h2>
-  <div class="col-md-6">
-    <table class="table table-striped table-hover table-bordered">
-      <thead>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Group</th>
-      <th>Committee</th>
-      </thead>
-      <tbody>
-      <% @users.each do |user| %>
-          <tr>
-            <td><%= link_to user.na_name, admin_path(user.id) %></td>
-            <td><%= user.role.name %></td>
-            <td><%= user.group.name %></td>
-            <td><%= user.committee.name %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-6">
-
-  </div>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Group</th>
+    <th>Committee</th>
+    </thead>
+    <tbody>
+    <%= paginate @users, param_name: :member_page %>
+    <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.na_name, member_path(user.id) %></td>
+          <td><%= user.role.name %></td>
+          <td><%= user.group.name %></td>
+          <td><%= user.committee.name %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+    <th>Name</th>
+    <th>Area</th>
+    </thead>
+    <tbody>
+    <%= paginate @groups, param_name: :group_page %>
+    <% @groups.each do |group| %>
+        <tr>
+          <td><%= link_to group.name, group_path(group.id) %></td>
+          <td><%= group.area.name %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

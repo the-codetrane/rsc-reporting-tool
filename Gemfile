@@ -18,6 +18,7 @@ gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'redis-rails'
 gem 'whenever', :require => false
+gem 'kaminari'
 
 gem 'rails_12factor', group: :production
 
