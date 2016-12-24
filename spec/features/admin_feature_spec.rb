@@ -13,6 +13,14 @@ feature 'Admin Dashboard' do
     let(:committee) { FactoryGirl.create(:committee) }
     let(:area) { FactoryGirl.create(:area) }
 
+    scenario 'Admin should see the Admin link' do
+      sign_up_admin
+      User.last.update(group: group, committee: committee)
+      group.update(area: area)
+      visit root_path
+      expect(page).to have_content('Admin')
+    end
+
     scenario 'Admin should see the Admin dashboard' do
       sign_up_admin
       User.last.update(group: group, committee: committee)

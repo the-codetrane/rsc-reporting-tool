@@ -14,13 +14,16 @@
         <li><%= link_to 'All Reports', reports_path %></li>
         <% if current_user %>
             <% if current_user.can_report %>
-            <li><%= link_to 'Submit A Report', new_report_path %></li>
+                <li><%= link_to 'Submit A Report', new_report_path %></li>
+            <% end %>
+            <% if current_user.role.name == 'Admin' %>
+                <li><%= link_to 'Admin', admin_index_path %></li>
             <% end %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-            <li><%= link_to "Hello, #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path,  data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
+            <li><%= link_to "Hello, #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path, data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li id="sign-in-nav"><%= link_to 'Sign in', new_user_session_path %></li>
