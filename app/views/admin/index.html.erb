@@ -11,13 +11,12 @@
       <th>Committee</th>
       </thead>
       <tbody>
-      <%= paginate @users, param_name: :member_page %>
       <% @users.each do |user| %>
           <tr>
             <td><%= link_to user.na_name, member_path(user.id) %></td>
-            <td><%= user.role.name %></td>
-            <td><%= user.group.name %></td>
-            <td><%= user.committee.name %></td>
+            <td><%= best_in_place_if current_user.is_admin?, user, :role_id, as: :select, collection: members_roles_helper, value: user.role, url: member_path(user.id) %></td>
+            <td><%= best_in_place_if current_user.is_admin?, user, :group_id, as: :select, collection: members_group_select, value: user.group, url: member_path(user.id) %></td>
+            <td><%= best_in_place_if current_user.is_admin?, user, :committee_id, as: :select, collection: members_committee_select, value: user.committee, url: member_path(user.id) %></td>
           </tr>
       <% end %>
       </tbody>

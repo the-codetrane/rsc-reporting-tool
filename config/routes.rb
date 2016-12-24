@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :members, only: [:show, :edit, :update]
+  resources :members
 
-  resources :groups, only: [:show, :edit, :update]
+  resources :groups
 
   resources :reports
 

@@ -19,4 +19,8 @@ class User < ApplicationRecord
     roles.include?(self.role.name)
   end
 
+  def is_admin?
+    self.role.name == 'Admin'
+  end
+
 end

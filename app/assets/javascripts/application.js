@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require best_in_place
+//= require jquery-ui
+//= require best_in_place.jquery-ui
 //= require tether
 //= require bootstrap-sprockets
 //= require jquery_ujs
@@ -21,4 +24,8 @@
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
+});
+
+$(document).ready(function() {
+    jQuery('.best_in_place').best_in_place();
 });
