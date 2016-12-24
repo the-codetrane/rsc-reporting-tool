@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :admin
 
   #email routes
-  get 'send_committee_report_email', to: 'reports#send_committee_report_email', as: 'committee_email'
+  get 'send_committee_report_email/:id', to: 'reports#send_committee_report_email', as: 'committee_email'
   get 'send_rsc_report_email', to: 'reports#send_rsc_report_email', as: 'rsc_email'
 
 end

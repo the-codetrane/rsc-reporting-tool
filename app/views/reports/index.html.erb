@@ -28,7 +28,7 @@
         <% end %>
         <% if r.created_by == current_user.email %>
             <td> <%= link_to 'Edit Report', edit_report_path(r), class: 'btn btn-primary btn-xs' %></td>
-            <td> <%= link_to 'Send email', committee_email_path, class: 'btn btn-success btn-xs'%></td>
+            <td> <%= link_to 'Send email', committee_email_path(r), class: 'btn btn-success btn-xs'%></td>
         <% else %>
             <td></td>
             <td></td>

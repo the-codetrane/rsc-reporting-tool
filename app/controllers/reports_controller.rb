@@ -51,11 +51,16 @@ class ReportsController < ApplicationController
   end
 
   def send_committee_report_email
-    ReportsMailer.create_report_email(@report.committee).deliver_later
+    report = Report.find(params[:id])
+    ReportsMailer.report_email(report.committee).deliver_later
+    flash[:success]= 'Report successfully emailed'
+    redirect_to :back
   end
 
   def send_rsc_report_email
     ReportsMailer.create_rsc_email.deliver_later
+    flash[:success]= 'Report successfully emailed'
+    redirect_to :back
   end
 
   private
