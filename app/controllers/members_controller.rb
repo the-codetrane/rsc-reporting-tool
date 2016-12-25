@@ -21,11 +21,12 @@ class MembersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(user_params)
-        format.html { redirect_to(@user, notice:'User was successfully updated.') }
-        format.json { respond_with_bip(@user) }
+        format.html
+        format.js { flash[:success] = 'Member record updated' }
+        format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: 'edit' }
-        format.json { respond_with_bip(@user) }
+        format.html
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end

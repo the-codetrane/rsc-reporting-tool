@@ -9,17 +9,22 @@
       <th>Role</th>
       <th>Group</th>
       <th>Committee</th>
+      <th>Submit</th>
       </thead>
       <tbody>
       <% @users.each do |user| %>
-          <tr>
-            <td><%= link_to user.na_name, member_path(user.id) %></td>
-            <td><%= best_in_place_if current_user.is_admin?, user, :role_id, as: :select, collection: members_roles_helper, class: 'selectpicker', value: user.role.name, url: member_path(user.id) %></td>
-            <td><%= best_in_place_if current_user.is_admin?, user, :group_id, as: :select, collection: members_group_select, class: 'selectpicker', value: user.group.name, url: member_path(user.id) %></td>
-            <td><%= best_in_place_if current_user.is_admin?, user, :committee_id, as: :select, collection: members_committee_select, class: 'selectpicker', value: user.committee.name, url: member_path(user.id) %></td>
-          </tr>
+          <%= form_for user, url: member_path(user), method: :put, remote: true do |f| %>
+              <tr>
+                <td><%= user.na_name %></td>
+                <td><%= f.collection_select :role_id, Role.all, :id, :name %></td>
+                <td><%= f.collection_select :group_id, Group.all, :id, :name, {}, data: {live_search: true} %></td>
+                <td><%= f.collection_select :committee_id, Committee.all, :id, :name %></td>
+                <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>
+              </tr>
+          <% end %>
       <% end %>
       </tbody>
     </table>
+    <% console %>
   </div>
 </div>
