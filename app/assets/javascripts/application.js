@@ -17,6 +17,9 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require turbolinks
@@ -28,4 +31,5 @@ $(function () {
 
 $(document).ready(function() {
     jQuery('.best_in_place').best_in_place();
+    $('select').selectpicker();
 });

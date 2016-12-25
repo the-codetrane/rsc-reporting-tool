@@ -11,6 +11,7 @@ gem 'sdoc', '>= 0.4.0', group: :doc
 gem 'bcrypt', '>= 3.1.7'
 gem 'pg'
 gem 'bootstrap-sass'
+gem 'bootstrap-select-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'dotenv-rails'
