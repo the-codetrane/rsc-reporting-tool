@@ -15,6 +15,7 @@
       <th>Submit</th>
       </thead>
       <tbody>
+      <%= paginate @users %>
       <% @users.each do |user| %>
           <%= form_for user, url: member_path(user), method: :put, remote: true do |f| %>
               <tr>
