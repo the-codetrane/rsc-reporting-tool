@@ -21,9 +21,6 @@ gem 'sidekiq-scheduler'
 gem 'redis-rails'
 gem 'whenever', :require => false
 gem 'kaminari'
-gem 'rails_12factor', group: :production
-gem 'tether-rails'
-gem 'rails_serve_static_assets'
 
 # Use Unicorn as the app server
 gem 'unicorn'

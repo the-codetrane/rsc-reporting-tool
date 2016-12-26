@@ -1,0 +1,11 @@
+//= require turbolinks
+//= require jquery3
+//= require jquery_ujs
+//= require jquery-ui
+//= require tether
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap-sprockets
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap

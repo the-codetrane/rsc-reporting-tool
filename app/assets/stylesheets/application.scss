@@ -1,10 +1,11 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "jquery-ui";
 @import "bootstrap.min";
+@import "bootstrap";
+@import "bootstrap-sprockets";
 @import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
 @import "bootstrap-select";
 @import "tether";
-@import "jquery-ui";
+
 
 @import "welcome";
 @import "reports";
