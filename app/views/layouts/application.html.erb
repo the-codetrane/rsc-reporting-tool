@@ -9,7 +9,9 @@
 <body>
 <%= render 'nav/nav' %>
 
-<%= render partial: 'shared/flash_messages', flash: flash %>
+<div id="flash-messages">
+  <%= render partial: 'shared/flash_messages', flash: flash %>
+</div>
 <div class="container-fluid">
   <%= yield %>
 </div>

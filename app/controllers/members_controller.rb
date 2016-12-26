@@ -22,7 +22,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(user_params)
         format.html
-        format.js { flash[:success] = 'Member record updated' }
+        format.js { flash.now.notice = 'Member record updated ' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html
