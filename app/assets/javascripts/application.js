@@ -10,9 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require source
-
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-    $('select').selectpicker();
-});
+//= require turbolinks
+//= require jquery3
+//= require jquery_ujs
+//= require jquery-ui
+//= require tether
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap-sprockets
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require admin
+//= require_tree .
