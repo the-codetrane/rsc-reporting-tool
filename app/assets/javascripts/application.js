@@ -12,7 +12,7 @@
 //
 //= require turbolinks
 //= require jquery
-//= require jquery-ui.all
+//= require jquery-ui
 //= require tether
 //= require jquery_ujs
 //= require bootstrap-select
