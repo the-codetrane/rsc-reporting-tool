@@ -20,9 +20,9 @@
           <%= form_for user, url: member_path(user), method: :put, remote: true do |f| %>
               <tr>
                 <td><%= user.na_name %></td>
-                <td><%= f.collection_select :role_id, Role.all, :id, :name %></td>
-                <td><%= f.collection_select :group_id, Group.all, :id, :name, {}, data: {live_search: true} %></td>
-                <td><%= f.collection_select :committee_id, Committee.all, :id, :name %></td>
+                <td><%= f.collection_select :role_id, @roles, :id, :name %></td>
+                <td><%= f.collection_select :group_id, @groups, :id, :name, {}, data: {live_search: true} %></td>
+                <td><%= f.collection_select :committee_id, @committees, :id, :name %></td>
                 <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>
               </tr>
           <% end %>
