@@ -15,4 +15,12 @@ module ApplicationHelper
     end
   end
 
+  def group_select
+    selections = []
+    Group.all.order(:name).each do |group|
+      selections << [group.name, group.id]
+    end
+    selections
+  end
+
 end

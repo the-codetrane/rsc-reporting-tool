@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :members, only: [:show, :edit, :update]
+  resources :members
 
-  resources :groups, only: [:show, :edit, :update]
+  resources :groups
 
   resources :reports
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :admin
+  resources :admin, only: :index
 
   #email routes
   get 'send_committee_report_email/:id', to: 'reports#send_committee_report_email', as: 'committee_email'
