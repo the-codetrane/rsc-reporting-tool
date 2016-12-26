@@ -22,6 +22,7 @@ gem 'redis-rails'
 gem 'whenever', :require => false
 gem 'kaminari'
 gem 'rails_12factor', group: :production
+gem 'tether-rails'
 
 # Use Unicorn as the app server
 gem 'unicorn'
@@ -62,5 +63,5 @@ group :development do
 end
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
+  gem 'rails-assets-tether'
 end
