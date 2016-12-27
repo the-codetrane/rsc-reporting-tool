@@ -1,33 +1,21 @@
-<head>
-  <%= javascript_include_tag 'admin' %>
-</head>
 <div class="container">
   <div class="row" id="admin-header">
     <h2 align="center">Admin Dashboard</h2>
   </div>
   <div class="row">
-    <table class="table table-hover table-bordered">
-      <thead>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Group</th>
-      <th>Committee</th>
-      <th>Submit</th>
-      </thead>
-      <tbody>
-      <%= paginate @users %>
-      <% @users.each do |user| %>
-          <%= form_for user, url: member_path(user), method: :put, remote: true do |f| %>
-              <tr>
-                <td><%= user.na_name %></td>
-                <td><%= f.collection_select :role_id, @roles, :id, :name %></td>
-                <td><%= f.collection_select :group_id, @groups, :id, :name, {}, data: {live_search: true} %></td>
-                <td><%= f.collection_select :committee_id, @committees, :id, :name %></td>
-                <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>
-              </tr>
-          <% end %>
-      <% end %>
-      </tbody>
-    </table>
+    <div id="member-pagination">
+      <%= paginate @users, param_name: :member_page, remote: true %>
+    </div>
+    <div id="member-table">
+      <%= render partial: 'member_table_partial', locals: {users: @users} %>
+    </div>
+  </div>
+  <div class="row">
+    <div id="group-pagination">
+      <%= paginate @groups, param_name: :group_page, remote: true %>
+    </div>
+    <div id="group-table">
+      <%= render partial: 'group_table_partial', locals: {groups: @groups} %>
+    </div>
   </div>
 </div>
