@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @user = Group.find(params[:id])
+    @group = Group.find(params[:id])
     respond_to do |format|
       if @group.update_attributes(group_params)
         format.html
