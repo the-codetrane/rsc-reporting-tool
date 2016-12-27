@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="row" id="admin-header">
-    <h2 align="center">Admin Dashboard</h2>
+  <div class="jumbotron" id="admin-header">
+    <h1 align="center">Admin Dashboard</h1>
+    <p align="center"><strong>Edit Members, Groups and Committees</strong></p>
   </div>
   <div class="row">
+    <h2>Edit Members</h2>
     <div id="member-pagination">
       <%= paginate @users, param_name: :member_page, remote: true %>
     </div>
@@ -11,11 +13,14 @@
     </div>
   </div>
   <div class="row">
-    <div id="group-pagination">
-      <%= paginate @groups, param_name: :group_page, remote: true %>
-    </div>
-    <div id="group-table">
-      <%= render partial: 'group_table_partial', locals: {groups: @groups} %>
+    <div class="col-md-6">
+      <h2>Edit Groups</h2>
+      <div id="group-pagination">
+        <%= paginate @groups, param_name: :group_page, remote: true %>
+      </div>
+      <div id="group-table">
+        <%= render partial: 'group_table_partial', locals: {groups: @groups} %>
+      </div>
     </div>
   </div>
 </div>

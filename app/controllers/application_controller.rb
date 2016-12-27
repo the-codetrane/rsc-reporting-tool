@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def is_admin?
-    unless current_user.role.name == 'Admin'
+    unless current_user.is_admin?
       flash[:alert]= 'You are not authorized to view this page'
       redirect_to root_path
     end
