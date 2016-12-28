@@ -16,8 +16,8 @@
             <% if current_user.can_report %>
                 <li><%= link_to 'Submit A Report', new_report_path %></li>
             <% end %>
-            <% if current_user.role.name == 'Admin' %>
-                <li><%= link_to 'Admin', admin_index_path %></li>
+            <% if current_user.is_admin? %>
+                <li><%= link_to 'Admin', admin_path %></li>
             <% end %>
         <% end %>
       </ul>

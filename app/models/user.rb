@@ -23,4 +23,10 @@ class User < ApplicationRecord
     self.role.name == 'Admin'
   end
 
+  def User.selector
+    Rails.cache.fetch('user_selector', :expires_in => 5.minutes) do
+      User.all.order(:last_name)
+    end
+  end
+
 end

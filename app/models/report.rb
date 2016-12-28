@@ -15,4 +15,10 @@ class Report < ApplicationRecord
     end
   end
 
+  def Report.selector
+    Rails.cache.fetch('report_selector', :expires_in => 5.minutes) do
+      Report.all.order(:name)
+    end
+  end
+
 end

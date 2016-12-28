@@ -15,10 +15,9 @@ class GroupsController < ApplicationController
       if @group.update_attributes(group_params)
         format.html
         format.js { flash.now.notice = 'Group record updated ' }
-        format.json { render json: @group, status: :created, location: @group }
       else
-        format.html
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        format.html {flash[:alert]= 'Something went wrong. Please contact administrator'; redirect_to :back}
+        format.js
       end
     end
   end
