@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_admin
-    if @admin.nil?
+    if current_user && @admin.nil?
       current_user.role.name == 'Admin' ? @admin = true : @admin = false
     end
   end
