@@ -8,7 +8,34 @@
       <%= paginate @users %>
     </div>
     <div id="member-table">
-      <%= render partial: 'member_table_partial', locals: {users: @users} %>
+      <table class="table table-hover table-bordered">
+        <thead>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Group</th>
+        <th>Committee</th>
+        <th>Submit</th>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <%= form_for user, url: member_path(user), class: 'form-horizontal', remote: true do |f| %>
+                <tr>
+                  <td class="col-md-2"><%= user.na_name %></td>
+                  <td class="col-md-2"><%= f.collection_select :role_id, @roles, :id, :name, {}, class: 'form-control' %></td>
+                  <td class="col-md-2"><%= f.collection_select :group_id, @group_select, :id, :name, {}, class: 'select2theme' %></td>
+                  <td class="col-md-2"><%= f.collection_select :committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
+                  <td class="col-md-2"><%= f.submit class: 'btn btn-primary btn-sm' %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.select2theme').select2();
+    });
+</script>

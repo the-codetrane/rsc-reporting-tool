@@ -11,15 +11,12 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require jquery3
+//= require jquery
+//= require tether
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
-//= require tether
-//= require bootstrap-select
-//= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap-sprockets
+//= require select2
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require admin
 //= require_tree .
