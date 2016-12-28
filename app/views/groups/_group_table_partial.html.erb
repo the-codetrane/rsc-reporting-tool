@@ -5,7 +5,7 @@
   </thead>
   <tbody>
   <% @groups.each do |group| %>
-      <%= form_for group, url: edit_group_path(group), method: :put, remote: true do |f| %>
+      <%= form_for group, remote: true do |f| %>
           <tr>
             <td><%= f.text_field :name, class: 'form-control' %></td>
             <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>

@@ -8,7 +8,7 @@
   </thead>
   <tbody>
   <% @users.each do |user| %>
-      <%= form_for user, url: edit_member_path(user), method: :put, remote: true do |f| %>
+      <%= form_for user, url: member_path(user), remote: true do |f| %>
           <tr>
             <td><%= user.na_name %></td>
             <td><%= f.collection_select :role_id, @roles, :id, :name %></td>

@@ -10,6 +10,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.js
       format.json { @user.to_json }
     end
   end
