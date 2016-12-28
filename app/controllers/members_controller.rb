@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :is_admin?
+  before_action :is_admin?, only: [:update]
 
   def index
     @roles = Role.selector

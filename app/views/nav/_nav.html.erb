@@ -12,18 +12,24 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'All Reports', reports_path %></li>
-        <% if current_user %>
-            <% if current_user.can_report %>
+        <% if @logged_in %>
+            <% if @logged_in.can_report %>
                 <li><%= link_to 'Submit A Report', new_report_path %></li>
             <% end %>
-            <% if current_user.is_admin? %>
-                <li><%= link_to 'Admin', admin_path %></li>
+            <% if @admin %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Tools <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                   <li><%= link_to 'Edit Members', members_path %></li>
+                   <li><%= link_to 'Edit Groups', groups_path %></li>
+                </ul>
+                </li>
             <% end %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-            <li><%= link_to "Hello, #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path, data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
+        <% if @logged_in %>
+            <li><%= link_to "Hello, #{@logged_in.first_name} #{@logged_in.last_name}", edit_user_registration_path, data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li id="sign-in-nav"><%= link_to 'Sign in', new_user_session_path %></li>

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :is_admin?
+  before_action :is_admin?, only: [:update]
 
   def index
     @group_select= Group.selector

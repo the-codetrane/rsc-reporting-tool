@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
   before_action :set_admin
+  before_action :logged_in_user
 
   def is_admin?
     if @admin
@@ -28,6 +29,11 @@ class ApplicationController < ActionController::Base
       current_user.role.name == 'Admin' ? @admin = true : @admin = false
     end
   end
+
+  def logged_in_user
+    @logged_in ||= current_user
+  end
+
 
 end
 
