@@ -1,14 +1,11 @@
 <div class="container">
   <div class="jumbotron" id="admin-header">
-    <h1 align="center">Admin Member Dashboard</h1>
-    <p align="center"><strong>Edit Members, Groups and Committees</strong></p>
+    <h1 align="center">Admin Dashboard</h1>
   </div>
-  <div class="row">
-    <h2>Edit Members</h2>
-    <div id="member-pagination">
-      <%= paginate @users %>
-    </div>
-    <div id="member-table">
-      <%= render partial: 'member_table_partial', locals: {users: @users} %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="btn-group btn-group-justified">
+      <%= link_to 'Edit members', members_path, class: 'btn btn-primary' %>
+      <%= link_to 'Group members', groups_path, class: 'btn btn-info' %>
     </div>
   </div>
+</div>

@@ -1,6 +1,12 @@
 class GroupsController < ApplicationController
   before_action :is_admin?
 
+  def index
+    @group_select= Group.selector
+
+    @groups = Group.all.order(:name).page(params[:page]).per(10)
+  end
+
   def show
     @group = Group.find(params[:id])
   end

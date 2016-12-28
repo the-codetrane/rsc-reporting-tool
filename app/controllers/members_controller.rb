@@ -6,7 +6,7 @@ class MembersController < ApplicationController
     @committees = Committee.selector
     @group_select= Group.selector
 
-    @users = User.all.order(:last_name).page(params[:page]).per(10)
+    @users = User.includes(:role, :group, :committee).all.order(:last_name).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html
