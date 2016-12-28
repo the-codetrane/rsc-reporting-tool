@@ -12,7 +12,7 @@
           <tr>
             <td><%= user.na_name %></td>
             <td><%= f.collection_select :role_id, @roles, :id, :name, {}, class: 'form-control' %></td>
-            <td><%= f.collection_select :group_id, @group_select, :id, :name, {}, data: {live_search: true}, class: 'form-control' %></td>
+            <td><%= f.collection_select :group_id, @group_select, :id, :name, {}, data: {live_search: true}, class: 'form-control selectpicker' %></td>
             <td><%= f.collection_select :committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
             <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>
           </tr>
@@ -20,7 +20,3 @@
   <% end %>
   </tbody>
 </table>
-
-<script>
-    $('select').selectpicker();
-</script>
