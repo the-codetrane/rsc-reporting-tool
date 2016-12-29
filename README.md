@@ -11,6 +11,7 @@ _With this this tool, you'll be able to:_
 - quickly create reports for your committee
 - automatically mail reports to subscribers
 - review group/area/regional archived reports
+- manage groups/members through Admin Dashboard
 
 More features coming soon!
 
