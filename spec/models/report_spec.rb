@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Report do
   describe 'Validations' do
   it {should belong_to :committee}
+  it {should have_one :user}
   end
 
   describe 'Model Methods' do

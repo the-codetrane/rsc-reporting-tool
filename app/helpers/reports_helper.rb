@@ -11,9 +11,4 @@ module ReportsHelper
     "Submitted by #{user.na_name} from #{user.group.name}"
   end
 
-  def reports_submitted_by(email)
-    user = @users.find_by_email(email)
-    "#{user.na_name} from #{user.group.name}"
-  end
-
 end

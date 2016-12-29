@@ -1,5 +1,4 @@
 class AdminController < ApplicationController
-  before_action :is_admin?
 
   def index
     @roles = Role.selector
@@ -14,5 +13,7 @@ class AdminController < ApplicationController
       format.js
     end
   end
+
+  private
 
 end

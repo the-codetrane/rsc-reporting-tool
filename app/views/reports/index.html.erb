@@ -22,11 +22,11 @@
         <td><%= r.created_at.strftime('%b %d, %Y') %></td>
         <td><%= r.updated_at.strftime('%b %d, %Y') %></td>
         <% if r.created_by %>
-            <td> <%= reports_submitted_by(r.created_by) %></td>
+            <td> <%= r.reports_submitted_by%></td>
         <% else %>
-            <td> submitter unknown</td>
+            <td>submitter unknown</td>
         <% end %>
-        <% if r.created_by == current_user.email %>
+        <% if r.created_by == @logged_in.email %>
             <td> <%= link_to 'Edit Report', edit_report_path(r), class: 'btn btn-primary btn-xs' %></td>
             <td> <%= link_to 'Send email', committee_email_path(r), class: 'btn btn-success btn-xs'%></td>
         <% else %>

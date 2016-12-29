@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def index
-    @reports = Report.includes(:committee).order(updated_at: :desc).all
+    @reports = Report.includes(:committee, :user).order(updated_at: :desc).all
     @users = User.all
     @committees = Committee.all
     respond_to do |format|

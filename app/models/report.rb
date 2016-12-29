@@ -1,6 +1,7 @@
 class Report < ApplicationRecord
 
   belongs_to :committee
+  has_one :user, primary_key: :created_by, foreign_key: :email
 
   def report_committee
     self.committee.name
@@ -20,5 +21,10 @@ class Report < ApplicationRecord
       Report.all.order(:name)
     end
   end
+
+  def reports_submitted_by
+    "#{self.user.na_name} from #{self.user.group.name}"
+  end
+
 
 end
