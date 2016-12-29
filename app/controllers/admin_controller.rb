@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  before_action :is_admin?
 
   def index
     @roles = Role.selector
@@ -15,5 +16,13 @@ class AdminController < ApplicationController
   end
 
   private
+
+  def is_admin?
+    if @logged_in.role.name == 'Admin'
+    else
+      flash[:alert]= 'You are not authorized to view this page'
+      redirect_to root_path
+    end
+  end
 
 end
