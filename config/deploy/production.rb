@@ -1,4 +1,4 @@
 set :stage, :production
 set :branch, 'master'
 
-role [:web, :db, :app], '35.163.29.223', user: 'ec2-user', primary: true
+role [:web, :db, :app], '77.104.162.56', user: 'naworks4', primary: true

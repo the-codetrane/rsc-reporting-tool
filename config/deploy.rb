@@ -3,7 +3,7 @@ lock '3.6.1'
 
 set :application, 'rsc-meeting-list-tool'
 set: :repo_url, 'git@github.com:the-codetrane/rsc-meeting-notes-app.git'
-set :deploy_to, '/home/deploy/rsc-meeting-list-tool'
+set :deploy_to, '/home/public_html/reports'
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
@@ -28,7 +28,7 @@ set :puma_preload_app, false
 set :ssh_options, {
     forward_agent: true,
     auth_methods: ['publickey'],
-    keys: %w(~/.ssh/aws-ssh-key.pem ~/.ssh/id_rsa_2)
+    keys: %w(~/.ssh/aws-ssh-key.pem ~/.ssh/siteground)
 }
 
 # Default branch is :master
