@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
-lock '3.6.1'
+lock '3.7.1'
 
 set :application, 'rsc-meeting-list-tool'
-set: :repo_url, 'git@github.com:the-codetrane/rsc-meeting-notes-app.git'
+set :repo_url, 'git@github.com:the-codetrane/rsc-meeting-notes-app.git'
 set :deploy_to, '/home/public_html/reports'
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
@@ -28,7 +28,7 @@ set :puma_preload_app, false
 set :ssh_options, {
     forward_agent: true,
     auth_methods: ['publickey'],
-    keys: %w(~/.ssh/aws-ssh-key.pem ~/.ssh/siteground)
+    keys: %w(~/.ssh/siteground)
 }
 
 # Default branch is :master
