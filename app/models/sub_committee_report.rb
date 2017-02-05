@@ -18,7 +18,7 @@ class SubCommitteeReport < ApplicationRecord
 
   def SubCommitteeReport.selector
     Rails.cache.fetch('report_selector', :expires_in => 5.minutes) do
-      Report.all.order(:name)
+      SubCommitteeReport.all.order(:name)
     end
   end
 

@@ -5,18 +5,30 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'All Reports', reports_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Area Reports', area_reports_path %></li>
+            <li><%= link_to 'Sub-Committee Reports', sub_committee_reports_path %></li>
+          </ul>
+        </li>
         <% if @logged_in %>
             <% if @logged_in.can_report %>
-                <li><%= link_to 'Submit A Report', new_report_path %></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Submit a Report<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Submit an Area Report', new_area_report_path %></li>
+                    <li><%= link_to 'Submit a Sub-Committee Report', new_sub_committee_report_path %></li>
+                  </ul>
+                </li>
             <% end %>
             <% if @admin %>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Tools <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                   <li><%= link_to 'Edit Members', members_path %></li>
-                   <li><%= link_to 'Edit Groups', groups_path %></li>
-                </ul>
+                    <li><%= link_to 'Edit Members', members_path %></li>
+                    <li><%= link_to 'Edit Groups', groups_path %></li>
+                  </ul>
                 </li>
             <% end %>
         <% end %>

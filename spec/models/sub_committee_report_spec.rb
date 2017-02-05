@@ -16,6 +16,7 @@ describe SubCommitteeReport do
       expect(report.report_committee).to eq(committee.name)
 
     end
+
   end
 
 end

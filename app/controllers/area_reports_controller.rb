@@ -1,6 +1,6 @@
 class AreaReportsController < ApplicationController
   def index
-    @area_reports = AreaReport.includes(:committee, :user).order(updated_at: :desc).all
+    @area_reports = AreaReport.includes(:area, :user).order(updated_at: :desc).all
     @users = User.all
     respond_to do |format|
       format.html
@@ -50,7 +50,7 @@ class AreaReportsController < ApplicationController
 
   def send_report_email
     report = AreaReport.find(params[:id])
-    ReportsMailer.report_email(report.committee).deliver_later
+    ReportsMailer.report_email(report.area).deliver_later
     flash[:success]= 'Report successfully emailed'
     redirect_to :back
   end

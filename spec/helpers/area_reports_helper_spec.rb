@@ -1,15 +1,13 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the AreaReportsHelper. For example:
-#
-# describe AreaReportsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe AreaReportsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe AreaReportsHelper do
+  describe '#report_signature' do
+  it 'returns a signature for reports' do
+      group = FactoryGirl.create(:group)
+      user = FactoryGirl.create(:user)
+      user.update(group_id: group.id)
+      response = report_signature(user)
+      expect(response).to include(user.first_name)
+    end
+  end
 end

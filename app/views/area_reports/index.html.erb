@@ -17,8 +17,8 @@
   <tbody>
   <% @area_reports.each do |r| %>
       <tr>
-        <td><%= link_to r.title, report_path(r) %></td>
-        <td><%= r.area %></td>
+        <td><%= link_to r.title, area_report_path(r) %></td>
+        <td><%= r.area.name %></td>
         <td><%= r.created_at.strftime('%b %d, %Y') %></td>
         <td><%= r.updated_at.strftime('%b %d, %Y') %></td>
         <% if r.created_by %>
@@ -28,7 +28,7 @@
         <% end %>
         <% if r.created_by == @logged_in.email %>
             <td> <%= link_to 'Edit Report', edit_area_report_path(r), class: 'btn btn-primary btn-xs' %></td>
-            <td> <%= link_to 'Send email', area_email(r), class: 'btn btn-success btn-xs'%></td>
+            <td> <%= link_to 'Send email', area_email_path(r), class: 'btn btn-success btn-xs'%></td>
         <% else %>
             <td></td>
             <td></td>
