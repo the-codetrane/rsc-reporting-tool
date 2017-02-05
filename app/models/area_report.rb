@@ -1,5 +1,5 @@
 class AreaReport < ApplicationRecord
-  belongs_to :committee
+  belongs_to :area
   has_one :user, primary_key: :created_by, foreign_key: :email
 
   def report_committee
@@ -15,9 +15,9 @@ class AreaReport < ApplicationRecord
     end
   end
 
-  def Report.selector
+  def AreaReport.selector
     Rails.cache.fetch('report_selector', :expires_in => 5.minutes) do
-      Report.all.order(:name)
+      AreaReport.all.order(:name)
     end
   end
 

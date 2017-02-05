@@ -8,6 +8,13 @@ class ReportsMailer < ApplicationMailer
     mail(to: @recipients, subject: "#{committee.name} Report, #{Date.today.strftime('%b-%Y')}")
   end
 
+  def area_report_email(area)
+    @area =  area
+    @report = AreaReport.find_by_committee_id(committee.id)
+    @recipients = User.where(area: area).pluck(:email)
+    mail(to: @recipients, subject: "#{committee.name} Report, #{Date.today.strftime('%b-%Y')}")
+  end
+
   def rsc_email
     @reports = SubCommitteeReport.where(created_at: (7.days.ago..DateTime.now))
     @recipients = User.all.pluck(:email)
