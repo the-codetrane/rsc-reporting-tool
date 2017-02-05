@@ -9,6 +9,7 @@ class CreateAreaReports < ActiveRecord::Migration[5.0]
       t.text :news
       t.text :motions
       t.text :notes
+      t.references :area, index: true
 
       t.timestamps
     end
