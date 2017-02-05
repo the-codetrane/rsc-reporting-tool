@@ -1,0 +1,33 @@
+<%= form_for @sub_committee_report, html: {class: 'form-horizontal'} do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :committee_id %>
+      <%= f.select :committee_id, committee_select, {}, {class: 'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :attendees %>
+      <%= f.text_field :attendees, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :old_business %>
+      <%= f.text_area :old_business, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :new_business %>
+      <%= f.text_area :new_business, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :notes %>
+      <%= f.text_area :notes, class: 'form-control' %>
+      <%= f.hidden_field :created_by, value: current_user.email %>
+    </div>
+    <div class="form-group">
+      <div class="col-md-6">
+        <%= f.submit 'Submit your report', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
+

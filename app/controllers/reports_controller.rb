@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
       flash[:success] = 'Your Report Has Been Submitted'
       redirect_to reports_path
     else
-      flash[:alert] = 'record did not save'
+      flash[:alert] = 'Record did not save'
       redirect_to new_report_path
     end
   end
