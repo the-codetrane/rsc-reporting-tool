@@ -15,22 +15,6 @@ ActiveRecord::Schema.define(version: 20170205192558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "area_reports", force: :cascade do |t|
-    t.string   "title"
-    t.string   "attendees"
-    t.text     "area_status"
-    t.text     "area_needs"
-    t.text     "events"
-    t.text     "news"
-    t.text     "motions"
-    t.text     "notes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "area_id"
-    t.string   "created_by"
-    t.index ["area_id"], name: "index_area_reports_on_area_id", using: :btree
-  end
-
   create_table "areas", force: :cascade do |t|
     t.string   "name"
     t.string   "county"
@@ -82,6 +66,22 @@ ActiveRecord::Schema.define(version: 20170205192558) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["committee_id"], name: "index_sub_committee_reports_on_committee_id", using: :btree
+  end
+
+  create_table "area_reports", force: :cascade do |t|
+    t.string   "title"
+    t.string   "attendees"
+    t.text     "area_status"
+    t.text     "area_needs"
+    t.text     "events"
+    t.text     "news"
+    t.text     "motions"
+    t.text     "notes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "area_id"
+    t.string   "created_by"
+    t.index ["area_id"], name: "index_area_reports_on_area_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

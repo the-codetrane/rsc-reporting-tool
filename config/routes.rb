@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   #email routes
   get 'send_sub_committee_report_email/:id', to: 'sub_committee_reports#send_report_email', as: 'committee_email'
-  get 'send_sub_committee_report_email/:id', to: 'area_reports#send_report_email', as: 'area_email'
+  get 'send_area_report_email/:id', to: 'area_reports#send_report_email', as: 'area_email'
   get 'send_rsc_report_email', to: 'reports#send_rsc_report_email', as: 'rsc_email'
 
 end

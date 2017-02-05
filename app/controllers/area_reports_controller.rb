@@ -50,7 +50,7 @@ class AreaReportsController < ApplicationController
 
   def send_report_email
     report = AreaReport.find(params[:id])
-    ReportsMailer.report_email(report.area).deliver_later
+    ReportsMailer.area_report_email(report.area).deliver_later
     flash[:success]= 'Report successfully emailed'
     redirect_to :back
   end
