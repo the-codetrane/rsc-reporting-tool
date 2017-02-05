@@ -1,0 +1,2 @@
+class AreaReportsController < ApplicationController
+end
