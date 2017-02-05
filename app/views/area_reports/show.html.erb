@@ -1,33 +1,45 @@
 <div class="container">
   <div class="row">
     <h2>
-      <%= @report.title %>
+      <%= @area_report.title %>
     </h2>
   </div>
   <div class="row">
     <h3>
-      Committee: <%= @report.committee.name %>
+      Area: <%= @area_report.area.name %>
     </h3>
   </div>
   <div class="row">
-    <h3>Committee Attendees:</h3>
-    <p><%= @report.attendees %></p>
+    <h3>Attendees:</h3>
+    <p><%= @area_report.attendees %></p>
   </div>
   <div class="row">
-    <h5>Old Business:</h5>
-    <p> <%= @report.old_business %></p>
+    <h5>Area Status:</h5>
+    <p> <%= @area_report.area_status %></p>
   </div>
   <div class="row">
-    <h5>New Business:</h5>
-    <p> <%= @report.new_business %></p>
+    <h5>Area Needs:</h5>
+    <p> <%= @area_report.area_needs %></p>
+  </div>
+  <div class="row">
+    <h5>Events:</h5>
+    <p> <%= @area_report.events %></p>
+  </div>
+  <div class="row">
+    <h5>News:</h5>
+    <p> <%= @area_report.news %></p>
+  </div>
+  <div class="row">
+    <h5>Motions:</h5>
+    <p> <%= @area_report.motions %></p>
   </div>
   <div class="row">
     <h5>Notes:</h5>
-    <p> <%= @report.old_business %></p>
+    <p> <%= @area_report.notes %></p>
   </div>
   <div class="row">
-    <% if @report.created_by %>
-        <p id="report-signature"><%= report_signature(User.find_by_email(@report.created_by)) %></p>
+    <% if @area_report.created_by %>
+        <p id="report-signature"><%= report_signature(User.find_by_email(@area_report.created_by)) %></p>
     <% end %>
   </div>
 </div>

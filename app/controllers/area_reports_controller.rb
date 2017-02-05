@@ -1,25 +1,25 @@
 class AreaReportsController < ApplicationController
   def index
-    @reports = AreaReport.includes(:committee, :user).order(updated_at: :desc).all
+    @area_reports = AreaReport.includes(:committee, :user).order(updated_at: :desc).all
     @users = User.all
     respond_to do |format|
       format.html
-      format.json {@reports.to_json}
+      format.json {@area_reports.to_json}
     end
   end
 
   def show
-    @report = AreaReport.find(params[:id])
+    @area_report = AreaReport.find(params[:id])
   end
 
   def new
-    @report = AreaReport.new
+    @area_report = AreaReport.new
   end
 
   def create
-    @report = AreaReport.new(report_params)
+    @area_report = AreaReport.create(report_params)
 
-    if @report.save
+    if @area_report.save
       flash[:success] = 'Your Report Has Been Submitted'
       redirect_to reports_path
     else
@@ -29,14 +29,13 @@ class AreaReportsController < ApplicationController
   end
 
   def edit
-    @report = AreaReport.find(params[:id])
+    @area_report = AreaReport.find(params[:id])
   end
 
   def update
-    @report = AreaReport.find(params[:id])
-    @report.update(report_params)
+    @area_report = AreaReport.find(params[:id])
 
-    if @report
+    if @area_report.update(report_params)
       flash[:success] = 'Your Report Has Been Updated'
       redirect_to reports_path
     else
