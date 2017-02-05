@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20170205192558) do
   add_foreign_key "groups", "areas"
   add_foreign_key "reports", "committees"
   add_foreign_key "sub_committee_reports", "committees"
-  add_foreign_key "area_committee_reports", "areas"
+  add_foreign_key "area_reports", "areas"
   add_foreign_key "users", "committees"
   add_foreign_key "users", "groups"
 end
