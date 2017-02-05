@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170205192558) do
     t.text     "notes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "areas_id"
+    t.integer  "area_id"
     t.string   "created_by"
     t.index ["area_id"], name: "index_area_reports_on_area_id", using: :btree
   end
