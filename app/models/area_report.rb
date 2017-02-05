@@ -2,10 +2,6 @@ class AreaReport < ApplicationRecord
   belongs_to :area
   has_one :user, primary_key: :created_by, foreign_key: :email
 
-  def report_committee
-    self.committee.name
-  end
-
   def mailer_submitted_by
     if self.created_by?
       user = User.find_by_email(self.created_by)

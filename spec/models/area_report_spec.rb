@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe AreaReport, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe AreaReport do
+  describe 'Validations' do
+    it {should belong_to :area}
+    it {should have_one :user}
+  end
+
 end

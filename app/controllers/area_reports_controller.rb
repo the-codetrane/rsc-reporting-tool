@@ -48,16 +48,10 @@ class AreaReportsController < ApplicationController
     AreaReport.find(params[id]).destroy
   end
 
-  def send_committee_report_email
+  def send_report_email
     report = AreaReport.find(params[:id])
     ReportsMailer.report_email(report.committee).deliver_later
     flash[:success]= 'Report successfully emailed'
-    redirect_to :back
-  end
-
-  def send_rsc_report_email
-    ReportsMailer.create_rsc_email.deliver_later
-    flash[:success]= 'Area Report successfully emailed'
     redirect_to :back
   end
 

@@ -1,10 +1,10 @@
-<%= form_for @report, html: {class: 'form-horizontal'} do |f| %>
+<%= form_for @area_report, html: {class: 'form-horizontal'} do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :areas_id %>
+      <%= f.label :area_id %>
       <%= f.select :area_id, committee_select, {}, {class: 'form-control'} %>
     </div>
     <div class="form-group">
@@ -30,14 +30,6 @@
     <div class="form-group">
       <%= f.label :motions %>
       <%= f.text_field :motions, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :old_business %>
-      <%= f.text_area :old_business, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :new_business %>
-      <%= f.text_area :new_business, class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :notes %>
