@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.8.0'
 
-set :application, 'rsc-meeting-list-tool'
+set :application, 'rsc-reporting-tool'
 set :repo_url, 'git@github.com:the-codetrane/rsc-meeting-notes-app.git'
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
