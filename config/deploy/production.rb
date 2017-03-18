@@ -1,4 +1,4 @@
 set :stage, :production
 set :branch, 'master'
 
-role [:web, :db, :app], '77.104.162.56', user: 'naworks4', primary: true, port: 18765
+role [:web, :db, :app], '138.197.69.82', user: 'cain-admin', primary: true, port: 18765
