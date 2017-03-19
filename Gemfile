@@ -25,7 +25,6 @@ gem 'whenever', :require => false
 gem 'kaminari'
 
 # Use Unicorn as the app server
-gem 'unicorn'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'figaro'
