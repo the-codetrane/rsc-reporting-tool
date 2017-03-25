@@ -17,14 +17,14 @@ class AreaReportsController < ApplicationController
   end
 
   def create
-    @area_report = AreaReport.create(report_params)
+    @area_report = AreaReport.new(area_report_params)
 
     if @area_report.save
       flash[:success] = 'Your Report Has Been Submitted'
-      redirect_to reports_path
+      redirect_to area_reports_path
     else
       flash[:alert] = 'Record did not save'
-      redirect_to new_report_path
+      redirect_to new_area_report_path
     end
   end
 
@@ -37,10 +37,10 @@ class AreaReportsController < ApplicationController
 
     if @area_report.update(report_params)
       flash[:success] = 'Your Report Has Been Updated'
-      redirect_to reports_path
+      redirect_to area_reports_path
     else
       flash[:alert] = 'Something went wrong. Please try again'
-      redirect_to new_report_path
+      redirect_to new_area_report_path
     end
   end
 
@@ -57,7 +57,7 @@ class AreaReportsController < ApplicationController
 
   private
 
-  def report_params
-    params.require(:report).permit!
+  def area_report_params
+    params.require(:area_report).permit!
   end
 end

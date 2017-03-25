@@ -13,7 +13,6 @@ entries.each do |entry|
   records = JSON.parse(data)
   model = entry.split('.').first
   records.each do |r|
-    r.delete('id')
     model.classify.constantize.create(r)
   end
 end

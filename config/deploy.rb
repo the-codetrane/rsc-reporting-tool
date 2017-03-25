@@ -38,8 +38,6 @@ namespace :puma do
       execute "mkdir #{shared_path}/tmp/pids -p"
     end
   end
-
-  before :start, :make_dirs
 end
 
 namespace :deploy do
