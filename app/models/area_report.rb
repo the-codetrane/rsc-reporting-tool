@@ -17,7 +17,7 @@ class AreaReport < ApplicationRecord
     end
   end
 
-  def reports_submitted_by
+  def report_submitted_by
     "#{self.user.na_name} from #{self.user.group.name}"
   end
 end

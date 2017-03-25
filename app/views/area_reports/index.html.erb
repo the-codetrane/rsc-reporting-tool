@@ -22,7 +22,7 @@
         <td><%= r.created_at.strftime('%b %d, %Y') %></td>
         <td><%= r.updated_at.strftime('%b %d, %Y') %></td>
         <% if r.created_by %>
-            <td> <%= r.reports_submitted_by%></td>
+            <td> <%= r.report_submitted_by%></td>
         <% else %>
             <td>submitter unknown</td>
         <% end %>

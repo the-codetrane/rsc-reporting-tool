@@ -7,5 +7,5 @@ $(document).ready(function () {
         pagingType: 'full_numbers',
         iDisplayLength: 25,
         order: [3, 'desc']
-    });
+    }).draw();
 });
