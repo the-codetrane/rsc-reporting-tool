@@ -14,7 +14,4 @@ test:
 production:
   <<: *default
   database: <%= ENV['PROD_DB_NAME'] %>
-  host: 127.0.0.1
-  port: 3333
-  username: postgres
   password: <%= ENV['PROD_DB_PASS'] %>
