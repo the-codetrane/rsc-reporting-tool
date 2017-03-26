@@ -1,14 +1,14 @@
 <table class="table table-hover table-bordered">
   <thead>
   <th>Name</th>
-  <th>Submit</th>
+  <th class="col-xs-4">Submit</th>
   </thead>
   <tbody>
   <% @groups.each do |group| %>
       <%= form_for group, remote: true do |f| %>
           <tr>
             <td><%= f.text_field :name, class: 'form-control' %></td>
-            <td><%= f.submit class: 'btn btn-primary btn-sm' %></td>
+            <td><%= f.submit class: 'btn btn-primary btn-xs' %></td>
           </tr>
       <% end %>
   <% end %>
