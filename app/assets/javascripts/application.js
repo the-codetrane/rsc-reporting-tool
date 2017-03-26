@@ -18,3 +18,12 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require_tree .
+
+$(document).on('turbolinks:load', function () {
+    $('.datatable').DataTable({
+        autoWidth: false,
+        pagingType: 'full_numbers',
+        iDisplayLength: 25,
+        order: [3, 'desc']
+    });
+});
