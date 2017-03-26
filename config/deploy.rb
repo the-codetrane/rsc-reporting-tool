@@ -38,8 +38,6 @@ namespace :puma do
       execute "mkdir #{shared_path}/tmp/pids -p"
     end
   end
-
-  before :start, :make_dirs
 end
 
 namespace :deploy do
@@ -75,6 +73,6 @@ namespace :deploy do
   after  :finishing,    :restart
 end
 
-# ps aux | grep puma    # Get puma pid
+#   # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
 # kill -s SIGTERM pid   # Stop puma
