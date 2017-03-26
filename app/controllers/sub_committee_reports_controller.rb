@@ -22,10 +22,10 @@ class SubCommitteeReportsController < ApplicationController
 
     if @sub_committee_report.save
       flash[:success] = 'Your Report Has Been Submitted'
-      redirect_to reports_path
+      redirect_to sub_committee_reports_path
     else
       flash[:alert] = 'Record did not save'
-      redirect_to new_report_path
+      redirect_to new_sub_committee_report_path
     end
   end
 
@@ -39,7 +39,7 @@ class SubCommitteeReportsController < ApplicationController
 
     if @sub_committee_report
       flash[:success] = 'Your Report Has Been Updated'
-      redirect_to reports_path
+      redirect_to sub_committee_reports_path
     else
       flash[:alert] = 'Something went wrong. Please try again'
       redirect_to new_report_path
