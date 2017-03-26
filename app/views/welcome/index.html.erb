@@ -4,12 +4,18 @@
     simple and easy!</p>
 </div>
 <div id="welcome-body">
-  <div class="btn-group btn-group-justified">
     <% if current_user.can_report%>
-      <%= link_to 'Submit A Sub-Committee Report', new_sub_committee_report_path, class: 'btn btn-primary btn-block welcome-button' %>
-      <%= link_to 'Find A Submitted Sub-Committee Report', sub_committee_reports_path, class: 'btn btn-info btn-block welcome-button'%>
-      <%= link_to 'Submit An Area Report', new_area_report_path, class: 'btn btn-primary btn-block welcome-button'%>
-      <%= link_to 'Find A Submitted Area Report', area_reports_path, class: 'btn btn-info btn-block welcome-button'%>
+        <div class="col-lg-3">
+          <%= link_to 'Submit A Sub-Committee Report', new_sub_committee_report_path, class: 'btn btn-primary btn-block welcome-button' %>
+        </div>
+        <div class="col-lg-3">
+          <%= link_to 'Find A Submitted Sub-Committee Report', sub_committee_reports_path, class: 'btn btn-info btn-block welcome-button'%>
+        </div>
+        <div class="col-lg-3">
+          <%= link_to 'Submit An Area Report', new_area_report_path, class: 'btn btn-primary btn-block welcome-button'%>
+        </div>
+        <div class="col-lg-3">
+         <%= link_to 'Find A Submitted Area Report', area_reports_path, class: 'btn btn-info btn-block welcome-button'%>
+        </div>
     <% end %>
-  </div>
 </div>
