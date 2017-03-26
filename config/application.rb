@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module RscMeetingNotesApp
   class Application < Rails::Application
-    config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.active_job.queue_adapter = :sidekiq
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
 
