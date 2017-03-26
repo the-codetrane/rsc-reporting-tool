@@ -62,6 +62,6 @@ class SubCommitteeReportsController < ApplicationController
   private
 
   def sub_committee_report_params
-    params.require(:report).permit!
+    params.require(:sub_committee_report).permit!
   end
 end
