@@ -6,10 +6,10 @@
   <thead>
   <tr>
     <th> Title</th>
-    <th> Committee</th>
-    <th> Submitted</th>
-    <th> Last Updated At</th>
-    <th> Submitted By</th>
+    <th> Area</th>
+    <th class="hide-content"> Submitted by</th>
+    <th class="hide-content"> Last Updated At</th>
+    <th class="hide-content" Submitted By</th>
     <th> Edit Report</th>
     <th> Email Report</th>
   </tr>
@@ -19,12 +19,12 @@
       <tr>
         <td><%= link_to r.title, report_path(r) %></td>
         <td><%= r.report_committee %></td>
-        <td><%= r.created_at.strftime('%b %d, %Y') %></td>
-        <td><%= r.updated_at.strftime('%b %d, %Y') %></td>
+        <td class="hide-content"><%= r.created_at.strftime('%b %d, %Y') %></td>
+        <td class="hide-content"><%= r.updated_at.strftime('%b %d, %Y') %></td>
         <% if r.created_by %>
-            <td> <%= r.reports_submitted_by%></td>
+            <td class="hide-content"> <%= r.reports_submitted_by%></td>
         <% else %>
-            <td>submitter unknown</td>
+            <td class="hide-content">submitter unknown</td>
         <% end %>
         <% if r.created_by == @logged_in.email %>
             <td> <%= link_to 'Edit Report', edit_sub_committee_report_path(r), class: 'btn btn-primary btn-xs' %></td>
@@ -36,4 +36,4 @@
       </tr>
   <% end %>
   </tbody>
-</table>
+</table>ga

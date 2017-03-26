@@ -18,3 +18,14 @@
 #shared-devise-links {
   margin-left: 10px;
 }
+
+table {
+  table-layout:fixed;
+  width:50%;
+}
+
+@media screen and (max-width: 480px){
+  .hide-content {
+    display: none;
+  }
+}
