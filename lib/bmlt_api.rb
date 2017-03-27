@@ -22,7 +22,7 @@ class BmltApi
   def update_groups
     self.response.each do |record|
       record.symbolize_keys!
-      group = Group.find_by_name(record[:meeting_name])
+      group = Group.find_by('name = ? AND area_id = ?',record[:meeting_name], record[:service_body_bigint])
       if group.present?
         group.update(name: record[:meeting_name], area_id: record[:service_body_bigint])
       else
