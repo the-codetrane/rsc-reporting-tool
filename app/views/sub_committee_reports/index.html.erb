@@ -17,7 +17,7 @@
   <tbody>
   <% @sub_committee_reports.each do |r| %>
       <tr>
-        <td><%= link_to r.title, report_path(r) %></td>
+        <td><%= link_to r.title, sub_committee_report_path(r) %></td>
         <td><%= r.report_committee %></td>
         <td class="hide-content"><%= r.created_at.strftime('%b %d, %Y') %></td>
         <td class="hide-content"><%= r.updated_at.strftime('%b %d, %Y') %></td>
