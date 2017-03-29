@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="navbar-brand"><%= link_to image_tag('na_symbol_large.gif', size: '45x45', id: 'nav-bar-img'), root_path %></div>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
@@ -20,7 +20,8 @@
         <% if @logged_in %>
             <% if @logged_in.can_report %>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Submit a Report<span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Submit
+                    a Report<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><%= link_to 'Submit an Area Report', new_area_report_path %></li>
                     <li><%= link_to 'Submit a Sub-Committee Report', new_sub_committee_report_path %></li>
@@ -29,7 +30,8 @@
             <% end %>
             <% if @admin %>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Tools <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin
+                    Tools <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><%= link_to 'Edit Members', members_path %></li>
                     <li><%= link_to 'Edit Groups', groups_path %></li>
@@ -42,6 +44,8 @@
         <% if @logged_in %>
             <li><%= link_to "Hello, #{@logged_in.first_name} #{@logged_in.last_name}", edit_user_registration_path, data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% elsif current_page?(controller: 'devise/sessions', action: 'new' )%>
+            <li id="sign-in-nav"><%= link_to 'Sign up', new_user_registration_path %></li>
         <% else %>
             <li id="sign-in-nav"><%= link_to 'Sign in', new_user_session_path %></li>
         <% end %>
