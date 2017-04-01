@@ -20,11 +20,11 @@
         <% @users.each do |user| %>
             <%= form_for user, url: member_path(user), class: 'form-horizontal', remote: true do |f| %>
                 <tr>
-                  <td class="col-md-2"><%= user.na_name %></td>
-                  <td class="col-md-2"><%= f.collection_select :role_id, @roles, :id, :name, {}, class: 'form-control' %></td>
-                  <td class="col-md-2"><%= f.collection_select :group_id, @group_select, :id, :name, {}, class: 'select2theme' %></td>
-                  <td class="col-md-2"><%= f.collection_select :committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
-                  <td class="col-md-2"><%= f.submit 'Update Member', class: 'btn btn-primary btn-sm' %></td>
+                  <td><%= user.na_name %></td>
+                  <td class="select2-div"><%= f.collection_select :role_id, @roles, :id, :name, {}, class: 'form-control' %></td>
+                  <td class="select2-div"><%= f.collection_select :group_id, @group_select, :id, :name, {}, class: 'form-control select2theme' %></td>
+                  <td class="select2-div"><%= f.collection_select :committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
+                  <td><%= f.submit 'Update Member', class: 'form-control btn btn-primary btn-sm' %></td>
                 </tr>
             <% end %>
         <% end %>

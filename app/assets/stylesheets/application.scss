@@ -24,6 +24,11 @@ table {
   width:50%;
 }
 
+th {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 480px){
   .hide-content {
     display: none;
