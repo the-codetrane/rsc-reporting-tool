@@ -10,8 +10,10 @@
     <th class="hide-content"> Submitted by</th>
     <th class="hide-content"> Last Updated At</th>
     <th class="hide-content" Submitted By</th>
-    <th> Edit Report</th>
-    <th> Email Report</th>
+    <% if current_user.can_report %>
+        <th> Edit Report</th>
+        <th> Email Report</th>
+    <% end %>
   </tr>
   </thead>
   <tbody>

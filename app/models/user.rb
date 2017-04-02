@@ -23,6 +23,10 @@ class User < ApplicationRecord
     self.role.name == 'Admin'
   end
 
+  def can_edit?
+    %w(Chair Co-Chair Secretary).include?(self.role.name)
+  end
+
   def User.selector
     Rails.cache.fetch('user_selector', :expires_in => 5.minutes) do
       User.all.order(:last_name)

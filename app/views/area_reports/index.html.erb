@@ -10,8 +10,10 @@
       <th class="hide-content"> Submitted by</th>
       <th class="hide-content"> Last Updated At</th>
       <th class="hide-content" Submitted By</th>
-      <th> Edit Report</th>
-      <th> Email Report</th>
+      <% if current_user.can_report %>
+        <th> Edit Report</th>
+        <th> Email Report</th>
+      <% end %>
     </tr>
     </thead>
     <tbody>
@@ -26,7 +28,7 @@
           <% else %>
               <td class="hide-content">submitter unknown</td>
           <% end %>
-          <% if r.created_by == @logged_in.email %>
+          <% if current_user.can_report? && r.created_by == @logged_in.email || current_user.can_edit? %>
               <td> <%= link_to 'Edit Report', edit_area_report_path(r), class: 'btn btn-primary btn-xs' %></td>
               <td> <%= link_to 'Send email', area_email_path(r), class: 'btn btn-success btn-xs'%></td>
           <% else %>

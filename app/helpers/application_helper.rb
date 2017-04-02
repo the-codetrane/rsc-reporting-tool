@@ -22,5 +22,4 @@ module ApplicationHelper
     end
     selections
   end
-
 end
