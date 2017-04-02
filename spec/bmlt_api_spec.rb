@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe BmltApi do
-  before(:context) {20.times {FactoryGirl.create(:area)}}
+  before(:all) {20.times {FactoryGirl.create(:area)}}
   describe 'API Call' do
 
     let(:api) {BmltApi.new(BmltApi::JSON_ENDPOINT)}
