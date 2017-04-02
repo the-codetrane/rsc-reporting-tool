@@ -16,7 +16,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: 'usm17.siteground.biz',
       port: 465,
-      domain: 'reports.naworks.org',
+      domain: 'do-not-repll.naworks.org',
       authentication: 'plain',
       enable_starttls_auto: true,
       user_name: ENV['MAIL_USER'],
