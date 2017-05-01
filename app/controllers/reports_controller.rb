@@ -51,7 +51,7 @@ class ReportsController < ApplicationController
   end
 
   def send_committee_report_email
-    report = Report.find(params[:id])
+    report = SubCommitteeReport.find(params[:id])
     ReportsMailer.report_email(report.committee).deliver_later
     flash[:success]= 'Report successfully emailed'
     redirect_to :back

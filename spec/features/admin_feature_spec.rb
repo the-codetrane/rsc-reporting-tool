@@ -34,8 +34,8 @@ feature 'Admin Dashboard' do
       User.last.update(group: group, sub_committee: sub_committee)
       group.update(area: area)
 
-      visit '/admin'
-      expect(page).to have_content('Delete Member')
+      visit '/admin/members'
+      expect(page).to have_button('Delete Member')
 
     end
   end
