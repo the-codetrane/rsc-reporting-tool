@@ -6,7 +6,7 @@ RSpec.describe WelcomeMailer, type: :mailer do
     let(:mail) { WelcomeMailer.welcome(user) }
 
     it 'renders the headers' do
-      expect(mail.subject).to eq('Welcome to the RSC Committee Reporting Tool')
+      expect(mail.subject).to eq('Welcome to the RSC SubCommittee Reporting Tool')
       expect(mail.to).to eq(['michael.m.cain.ii@gmail.com'])
       expect(mail.from).to eq(['no-reply@naworks.com'])
     end

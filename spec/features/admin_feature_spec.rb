@@ -10,12 +10,12 @@ feature 'Admin Dashboard' do
 
   context 'Admin login' do
     let(:group) { FactoryGirl.create(:group) }
-    let(:committee) { FactoryGirl.create(:committee) }
+    let(:sub_committee) { FactoryGirl.create(:sub_committee) }
     let(:area) { FactoryGirl.create(:area) }
 
     scenario 'Admin should see the Admin link' do
       sign_up_admin
-      User.last.update(group: group, committee: committee)
+      User.last.update(group: group, sub_committee: sub_committee)
       group.update(area: area)
       visit root_path
       expect(page).to have_content('Admin')
@@ -23,23 +23,17 @@ feature 'Admin Dashboard' do
 
     scenario 'Admin should see the Admin dashboard' do
       sign_up_admin
-      User.last.update(group: group, committee: committee)
+      User.last.update(group: group, sub_committee: sub_committee)
       group.update(area: area)
       visit '/admin'
       expect(page).to have_content('Admin Dashboard')
     end
-  end
 
-  context 'Member login' do
-    let(:group) { FactoryGirl.create(:group) }
-    let(:committee) { FactoryGirl.create(:committee) }
+    scenario 'Admin should be able to delete member' do
 
-    scenario 'Regular user should not be able to see Admin dashboard' do
-      sign_up_regular
-      User.last.update(group: group, committee: committee)
-      visit '/admin'
-      expect(page).to have_content('You are not authorized to view this page')
     end
   end
+
+
 
 end

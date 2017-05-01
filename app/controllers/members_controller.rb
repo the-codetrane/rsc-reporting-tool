@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   def index
     @roles = Role.selector
-    @committees = Committee.selector
+    @committees = SubCommittee.selector
     @group_select= Group.selector
 
     @users = User.all.order(:last_name).page(params[:page]).per(10)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205192558) do
+ActiveRecord::Schema.define(version: 20170501015503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,21 +25,16 @@ ActiveRecord::Schema.define(version: 20170205192558) do
     t.text     "motions"
     t.text     "notes"
     t.integer  "area_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "created_by"
+    t.string   "edited_by",   default: "N.A."
     t.index ["area_id"], name: "index_area_reports_on_area_id", using: :btree
   end
 
   create_table "areas", force: :cascade do |t|
     t.string   "name"
     t.string   "county"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "committees", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,10 +73,17 @@ ActiveRecord::Schema.define(version: 20170205192558) do
     t.text     "new_business"
     t.text     "notes"
     t.string   "created_by"
-    t.integer  "committee_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["committee_id"], name: "index_sub_committee_reports_on_committee_id", using: :btree
+    t.integer  "sub_committee_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "edited_by",        default: "N.A."
+    t.index ["sub_committee_id"], name: "index_sub_committee_reports_on_sub_committee_id", using: :btree
+  end
+
+  create_table "sub_committees", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,17 +102,17 @@ ActiveRecord::Schema.define(version: 20170205192558) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "group_id"
-    t.integer  "committee_id"
+    t.integer  "sub_committee_id"
     t.integer  "role_id",                default: 5
-    t.index ["committee_id"], name: "index_users_on_committee_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_users_on_group_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["sub_committee_id"], name: "index_users_on_sub_committee_id", using: :btree
   end
 
   add_foreign_key "groups", "areas"
-  add_foreign_key "reports", "committees"
-  add_foreign_key "sub_committee_reports", "committees"
-  add_foreign_key "users", "committees"
+  add_foreign_key "reports", "sub_committees", column: "committee_id"
+  add_foreign_key "sub_committee_reports", "sub_committees"
   add_foreign_key "users", "groups"
+  add_foreign_key "users", "sub_committees"
 end

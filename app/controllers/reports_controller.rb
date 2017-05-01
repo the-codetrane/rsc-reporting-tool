@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.includes(:committee, :user).order(updated_at: :desc).all
     @users = User.all
-    @committees = Committee.all
+    @committees = SubCommittee.all
     respond_to do |format|
       format.html
       format.json {@reports.to_json}
@@ -53,12 +53,6 @@ class ReportsController < ApplicationController
   def send_committee_report_email
     report = Report.find(params[:id])
     ReportsMailer.report_email(report.committee).deliver_later
-    flash[:success]= 'Report successfully emailed'
-    redirect_to :back
-  end
-
-  def send_rsc_report_email
-    ReportsMailer.create_rsc_email.deliver_later
     flash[:success]= 'Report successfully emailed'
     redirect_to :back
   end

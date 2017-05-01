@@ -23,4 +23,4 @@ en:
   hello: "Hello world"
   welcome_mailer:
     welcome:
-      subject: 'Welcome to the RSC Committee Reporting Tool'
+      subject: 'Welcome to the RSC SubCommittee Reporting Tool'

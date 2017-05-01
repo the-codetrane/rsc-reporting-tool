@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :group
-  belongs_to :committee
+  belongs_to :sub_committee
   belongs_to :role
 
   validates :first_name, presence: true

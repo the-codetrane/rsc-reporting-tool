@@ -1,10 +1,10 @@
 class SubCommitteeReport < ApplicationRecord
 
-  belongs_to :committee
+  belongs_to :sub_committee
   has_one :user, primary_key: :created_by, foreign_key: :email
 
   def report_committee
-    self.committee.name
+    self.sub_committee.name
   end
 
   def mailer_submitted_by

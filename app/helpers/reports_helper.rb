@@ -1,7 +1,7 @@
 module ReportsHelper
-  def committee_select
+  def sub_committee_select
     selections = []
-    Committee.all.order(:name).each do |committee|
+    SubCommittee.all.order(:name).each do |committee|
       selections << [committee.name, committee.id]
     end
     selections

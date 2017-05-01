@@ -2,7 +2,7 @@ class SubCommitteeReportsController < ApplicationController
   def index
     @sub_committee_reports = SubCommitteeReport.includes(:committee, :user).order(updated_at: :desc).all
     @users = User.all
-    @committees = Committee.all
+    @committees = SubCommittee.all
     respond_to do |format|
       format.html
       format.json {@sub_committee_reports.to_json}

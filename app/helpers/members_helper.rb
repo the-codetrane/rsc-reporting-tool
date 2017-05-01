@@ -5,7 +5,7 @@ module MembersHelper
   end
 
   def members_committee_select
-    Committee.all.order(:name).pluck(:id, :name).to_h
+    SubCommittee.all.order(:name).pluck(:id, :name).to_h
   end
 
   def members_roles_helper

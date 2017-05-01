@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
   def index
     @roles = Role.selector
-    @committees = Committee.selector
+    @committees = SubCommittee.selector
     @group_select= Group.selector
 
     @users = User.all.order(:last_name).page(params[:member_page]).per(10)
@@ -13,6 +13,12 @@ class AdminController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  def send_rsc_report_email
+    ReportsMailer.create_rsc_email.deliver_later
+    flash[:success]= 'Report successfully emailed'
+    redirect_to :back
   end
 
   private
