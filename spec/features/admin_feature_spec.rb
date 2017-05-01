@@ -30,6 +30,12 @@ feature 'Admin Dashboard' do
     end
 
     scenario 'Admin should be able to delete member' do
+      sign_up_admin
+      User.last.update(group: group, sub_committee: sub_committee)
+      group.update(area: area)
+
+      visit '/admin'
+      expect(page).to have_content('Delete Member')
 
     end
   end

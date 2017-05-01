@@ -44,6 +44,15 @@ class MembersController < ApplicationController
     end
   end
 
+  def destroy
+    @member = User.find(params[:id])
+    @member.destroy
+    respond_to do |format|
+      format.js {flash.now.alert = 'Member record destroyed'}
+    end
+
+  end
+
   private
 
   def user_params

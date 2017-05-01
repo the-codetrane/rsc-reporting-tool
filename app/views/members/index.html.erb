@@ -13,20 +13,22 @@
         <th>Name</th>
         <th>Role</th>
         <th>Group</th>
-        <th>SubCommittee</th>
+        <th>Sub-Committee</th>
         <th>Submit</th>
+        <th>Delete</th>
         </thead>
         <tbody>
         <% @users.each do |user| %>
+            <tr>
             <%= form_for user, url: member_path(user), class: 'form-horizontal', remote: true do |f| %>
-                <tr>
                   <td><%= user.na_name %></td>
                   <td class="select2-div"><%= f.collection_select :role_id, @roles, :id, :name, {}, class: 'form-control' %></td>
                   <td class="select2-div"><%= f.collection_select :group_id, @group_select, :id, :name, {}, class: 'form-control select2theme' %></td>
-                  <td class="select2-div"><%= f.collection_select :committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
-                  <td><%= f.submit 'Update Member', class: 'form-control btn btn-primary btn-sm' %></td>
-                </tr>
+                  <td class="select2-div"><%= f.collection_select :sub_committee_id, @committees, :id, :name, {}, class: 'form-control' %></td>
+                  <td><%= f.submit 'Update Member', class: 'form-control btn btn-primary' %></td>
             <% end %>
+              <td> <%= button_to 'Delete Member', {action: :destroy, id: user.id}, method: :delete, remote: true, class: 'form-control btn btn-danger', data: {confirm: 'Please confirm member delete'} %></td>
+            </tr>
         <% end %>
         </tbody>
       </table>

@@ -1,6 +1,6 @@
 class SubCommitteeReportsController < ApplicationController
   def index
-    @sub_committee_reports = SubCommitteeReport.includes(:committee, :user).order(updated_at: :desc).all
+    @sub_committee_reports = SubCommitteeReport.includes(:sub_committee, :user).order(updated_at: :desc).all
     @users = User.all
     @committees = SubCommittee.all
     respond_to do |format|
@@ -54,7 +54,7 @@ class SubCommitteeReportsController < ApplicationController
 
   def send_report_email
     report = SubCommitteeReport.find(params[:id])
-    ReportsMailer.sub_committee_report_email(report.committee).deliver_later
+    ReportsMailer.sub_committee_report_email(report.sub_committee).deliver_later
     flash[:success]= 'Sub-Committee Report successfully emailed'
     redirect_to :back
   end
