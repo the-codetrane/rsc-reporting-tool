@@ -1,0 +1,50 @@
+<table>
+  <tr>
+    <td><h2><%= @area.name %> Report</h2></td>
+  </tr>
+  <tr>
+    <td><p style="font-style: italic"><%= @report.mailer_submitted_by %></p></td>
+  </tr>
+  <tr>
+    <td><h3>In Attendance: </h3><%= @report.attendees %></td>
+  </tr>
+  <tr>
+    <td><h3>Area Status</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.area_status %></td>
+  </tr>
+  <tr>
+    <td><h3>Area Needs</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.area_needs %></td>
+  </tr>
+  <tr>
+    <td><h3>Events</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.events %></td>
+  </tr>
+  <tr>
+    <td><h3>News</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.news %></td>
+  </tr>
+  <tr>
+    <td><h3>Motions</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.motions %></td>
+  </tr>
+  <tr>
+    <td><h3>Notes</h3></td>
+  </tr>
+  <tr>
+    <td><%= @report.notes %></td>
+  </tr>
+</table>
+<br/>
+<br/>
+<p style="font-style: italic">For more reports, please visit <%= link_to 'The RSC Subcommittee Report Tool', area_reports_url %></p>

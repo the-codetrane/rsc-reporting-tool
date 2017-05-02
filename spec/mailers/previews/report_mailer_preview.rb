@@ -1,6 +1,6 @@
 class ReportMailerPreview < ActionMailer::Preview
-  def report_email
-    sub_committee = SubCommittee.first
+  def sub_committee_report_email
+    sub_committee = SubCommittee.last
     ReportsMailer.sub_committee_report_email(sub_committee)
   end
 

@@ -1,0 +1,45 @@
+<%= @report.name %> Report
+
+<%= @report.mailer_submitted_by %>
+
+In Attendance:
+--------------
+
+<%= @report.attendees %>
+
+Area Status:
+-------------
+
+<%= @report.area_status %>
+
+Area Needs:
+-------------
+
+<%= @report.area_needs %>
+
+Events:
+------
+
+<%= @report.events %>
+
+News:
+------
+
+<%= @report.news %>
+
+Motions:
+------
+
+<%= @report.motions %>
+x
+Notes:
+------
+
+<%= @report.notes %>
+
+Notes:
+------
+
+<%= @report.notes %>
+
+For more reports, please visit <%= sub_committee_reports_url %>

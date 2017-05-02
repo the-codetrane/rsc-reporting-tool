@@ -12,7 +12,7 @@ class AreaReport < ApplicationRecord
   end
 
   def AreaReport.selector
-    Rails.cache.fetch('report_selector', :expires_in => 5.minutes) do
+    Rails.cache.fetch('report_selector', expires_in: 5.minutes) do
       AreaReport.all.order(:name)
     end
   end

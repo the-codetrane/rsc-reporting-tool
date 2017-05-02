@@ -7,21 +7,22 @@ feature 'Member Access' do
     FactoryGirl.create_list(:admin, 4)
     FactoryGirl.create(:role)
     FactoryGirl.create(:area)
-    FactoryGirl.create(:sub_committee)
+    FactoryGirl.create(:sub_committee, id: 1)
     FactoryGirl.create(:area_report)
-    FactoryGirl.create(:sub_committee_report)
+    FactoryGirl.create(:sub_committee_report, sub_committee_id: 1)
   end
 
   context 'Registered Member' do
-    let(:group) { FactoryGirl.create(:group) }
-    let(:sub_committee) { FactoryGirl.create(:sub_committee) }
+    let(:group) { Group.last }
+    let(:sub_committee) { SubCommittee.last }
+    let(:user) { User.last }
 
 
     scenario 'Member can see, but not edit, reports' do
       sign_up_regular
 
-      User.last.update(group: group, sub_committee: sub_committee)
-      AreaReport.last.update(area: Area.last, created_by: User.last.email)
+      user.update(group: group, sub_committee: sub_committee)
+      AreaReport.last.update(area: Area.last, created_by: user.email)
 
       visit 'area_reports'
       expect(page).to have_content('Area Reports')
