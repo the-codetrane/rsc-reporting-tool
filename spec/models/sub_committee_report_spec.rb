@@ -7,12 +7,10 @@ describe SubCommitteeReport do
   end
 
   describe 'Model Methods' do
-    let(:report) {FactoryGirl.create(:sub_committee_report)}
+    let(:sub_committee) {FactoryGirl.create(:sub_committee)}
 
     it 'returns the committee the report belongs to' do
-      sub_committee = FactoryGirl.create(:sub_committee)
-      report.update(sub_committee_id: sub_committee.id)
-
+      report = FactoryGirl.create(:sub_committee_report, sub_committee_id: sub_committee.id)
       expect(report.report_committee).to eq(sub_committee.name)
 
     end

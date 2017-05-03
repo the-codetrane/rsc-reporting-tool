@@ -6,6 +6,7 @@ def sign_up_regular
   fill_in 'First name', with: 'Testy'
   fill_in 'Last name', with: 'Testifarious'
   click_on 'Sign up'
+  User.last.update(role: Role.last)
 end
 
 def sign_up_admin
@@ -16,5 +17,5 @@ def sign_up_admin
   fill_in 'First name', with: 'Testy'
   fill_in 'Last name', with: 'Testifarious'
   click_on 'Sign up'
-  User.last.update(role_id: 1)
+  User.last.update(role: Role.find_by_name('Admin'))
 end
