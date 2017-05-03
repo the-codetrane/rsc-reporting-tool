@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.8.0'
 
-set :repo_url,        'git@github.com:the-codetrane/rsc-meeting-notes-app.git'
+set :repo_url,        'git@github.com:the-codetrane/rsc-reporting-tool.git'
 set :application,     'rsc-reporting-tool'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
