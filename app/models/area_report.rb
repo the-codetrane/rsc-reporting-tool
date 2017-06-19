@@ -1,6 +1,8 @@
 class AreaReport < ApplicationRecord
   belongs_to :area
   has_one :user, primary_key: :created_by, foreign_key: :email
+  validates_numericality_of :donation, allow_nil: true
+  validates :title, presence: true
 
   def mailer_submitted_by
     if self.created_by?
