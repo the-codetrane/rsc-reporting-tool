@@ -1,0 +1,6 @@
+<h3>Area Report Entries Made by Day of the Week:</h3>
+<%= column_chart AreaReport.group_by_day_of_week(:created_at, format: "%A").count %>
+<p>
+  Honestly, I don't think anyone would care about this kind of data visualization, but I had to graph
+  <i>something</i>, for crying out loud.
+</p>

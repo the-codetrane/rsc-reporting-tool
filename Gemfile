@@ -24,6 +24,7 @@ gem 'redis-rails'
 gem 'whenever', :require => false
 gem 'kaminari'
 gem 'chartkick'
+gem 'groupdate'
 
 # Use Unicorn as the app server
 gem 'devise'
