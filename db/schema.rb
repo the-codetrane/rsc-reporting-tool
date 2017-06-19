@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 20170619021019) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "edited_by",        default: "N.A."
-    t.decimal  "donation_amount"
     t.index ["sub_committee_id"], name: "index_sub_committee_reports_on_sub_committee_id", using: :btree
   end
 

@@ -34,6 +34,10 @@
     <p> <%= @area_report.motions %></p>
   </div>
   <div class="row">
+    <h5>Donation Amount: </h5>
+    <%= number_to_currency(@area_report.donation) %>
+  </div>
+  <div class="row">
     <h5>Notes:</h5>
     <p> <%= @area_report.notes %></p>
   </div>
