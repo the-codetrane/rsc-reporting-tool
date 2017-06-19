@@ -13,6 +13,6 @@ entries.each do |entry|
   records = JSON.parse(data)
   model = entry.split('.').first
   records.each do |r|
-    model.classify.constantize.create(r)
+    model.classify.constantize.first_or_create!(r)
   end
 end
