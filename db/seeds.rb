@@ -20,12 +20,18 @@ end
 
 AreaReport.destroy_all
 
-1000.times do |index|
-
-  AreaReport.create!(title: Faker::Lorem.word, attendees: Faker::Name.name, area_status: Faker::Lorem.word,
+777.times do |index|
+  attendees = ''
+  rand(30).times do
+    attendees << Faker::Name.name + ", "
+  end
+  attendees.chop!
+  attendees.chop!
+  attendees << "."
+  AreaReport.create!(title: Faker::Lorem.word, attendees: attendees , area_status: Faker::Lorem.word,
   area_needs: Faker::Lorem.paragraph, events: Faker::Lorem.paragraph,
   news: Faker::Lorem.paragraph, motions: Faker::Lorem.paragraph, notes: Faker::Lorem.paragraph,
-  area_id: Area.ids.sample, created_at: Faker::Date.backward(1000),
+  area_id: Area.ids.sample, created_at: Faker::Date.backward(365),
   updated_at: Faker::Date.backward(1000), created_by: "leatherdaddy63@juno.net",
   edited_by: "N.A.", donation: Faker::Commerce.price)
 end
