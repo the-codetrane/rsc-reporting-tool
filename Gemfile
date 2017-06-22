@@ -23,6 +23,7 @@ gem 'sidekiq-scheduler'
 gem 'redis-rails'
 gem 'whenever', :require => false
 gem 'kaminari'
+gem 'chartkick'
 
 # Use Unicorn as the app server
 gem 'devise'

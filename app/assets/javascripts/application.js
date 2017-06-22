@@ -17,6 +17,8 @@
 //= require select2
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
