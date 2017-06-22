@@ -55,6 +55,9 @@ class AreaReportsController < ApplicationController
     redirect_to :back
   end
 
+  def donations_by_area(area)
+    
+  end
   private
 
   def area_report_params

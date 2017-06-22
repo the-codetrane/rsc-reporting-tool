@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   get '/admin', to: 'admin#index'
-  get '/charts', to: 'charts#index'
 
   scope '/admin' do
-    resources :members, :groups
+    resources :members, :groups, :charts
   end
 
   #email routes
