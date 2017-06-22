@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+=begin
 entries = Dir.open("#{Rails.root}/export_seeds").entries
 entries.shift(2)
 entries.each do |entry|
@@ -16,3 +16,4 @@ entries.each do |entry|
     model.classify.constantize.first_or_create!(r)
   end
 end
+=end
