@@ -5,18 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-=begin
-entries = Dir.open("#{Rails.root}/export_seeds").entries
-entries.shift(2)
-entries.each do |entry|
-  data = File.read("#{Rails.root}/export_seeds/#{entry}")
-  records = JSON.parse(data)
-  model = entry.split('.').first
-  records.each do |r|
-    model.classify.constantize.first_or_create!(r)
+begin
+  entries = Dir.open("#{Rails.root}/export_seeds").entries.sort
+  entries.shift(2)
+  entries.each do |entry|
+    data = File.read("#{Rails.root}/export_seeds/#{entry}")
+    records = JSON.parse(data)
+    model = entry.split('.').first
+      records.each do |r|
+      model.classify.constantize.first_or_create!(r)
+    end
   end
 end
-=end
 
 AreaReport.destroy_all
 

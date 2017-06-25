@@ -1,4 +1,6 @@
 <div class="chart">
-  <%= pie_chart @total_donations %>
-  <center><h4>Donations by Area</h4></center>
+  <%= column_chart @donations %>
+  <%= form_tag(refresh_charts_path, method: :get, id: 'chart-select') do %>
+    <strong>Show Data for Month: </strong> <%= select_month @month %>
+  <% end %>
 </div>

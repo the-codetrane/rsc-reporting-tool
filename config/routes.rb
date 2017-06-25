@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#index'
 
   scope '/admin' do
-    resources :members, :groups, :charts
+    resources :members, :groups
+    resources :charts, only: :index do
+      get :refresh, on: :collection
+    end
   end
 
   #email routes
