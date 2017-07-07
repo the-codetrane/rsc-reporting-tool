@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-%w(area role group).each do |entry|
+%w(area role group sub_committee).each do |entry|
   data = File.read("#{Rails.root}/export_seeds/#{entry + '.json'}")
   records = JSON.parse(data)
   model = entry.split('.').first
