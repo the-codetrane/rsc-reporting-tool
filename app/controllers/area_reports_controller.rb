@@ -35,7 +35,7 @@ class AreaReportsController < ApplicationController
   def update
     @area_report = AreaReport.find(params[:id])
 
-    if @area_report.update(report_params)
+    if @area_report.update(area_report_params)
       flash[:success] = 'Your Report Has Been Updated'
       redirect_to area_reports_path
     else
