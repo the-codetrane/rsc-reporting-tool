@@ -1,2 +1,4 @@
-<h2><%= @groups.find(@group_id).name %>'s Monthly Donations:</h2>
-<%= line_chart @donations %>
+<h2>Generate Graphical Reports</h2>
+<p>This tool allows you to generate real-time graphical reports. Please make a selection.</p>
+<%= link_to 'Monthly Donations for All Groups', reports_monthly_donations_by_all_groups_path %><br />
+<%= link_to 'Monthly Donations for Specific Group', reports_monthly_group_donations_path  %>

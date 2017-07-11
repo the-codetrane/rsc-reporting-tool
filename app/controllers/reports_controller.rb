@@ -1,8 +1,17 @@
 class ReportsController < ApplicationController
   def index
-    @group_id = 59
+
+  end
+
+  def monthly_group_donations
     @groups = Group.all
+    @group_id = @groups.sample.id
+
     @donations = group_donations_per_month(@group_id)
+  end
+
+  def monthly_donations_by_all_groups
+
   end
 
   private
