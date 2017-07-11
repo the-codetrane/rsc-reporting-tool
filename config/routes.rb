@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :area_reports
   resources :sub_committee_reports
+  resources :reports
 
   devise_for :users
 

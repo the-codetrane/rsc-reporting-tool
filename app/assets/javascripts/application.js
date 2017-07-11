@@ -19,6 +19,7 @@
 //= require select2
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require reports
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
