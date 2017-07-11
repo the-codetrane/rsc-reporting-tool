@@ -14,6 +14,8 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require highcharts
+//= require chartkick
 //= require select2
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
