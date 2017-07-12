@@ -18,8 +18,8 @@ class ReportsController < ApplicationController
 
   def group_donations_per_month(group_id)
     donations_by_month = {}
-    area_reports = AreaReport.all.select {|report| report.user.group_id == group_id}.sort_by {|report| report.created_at}
-    area_reports.each do |report|
+    area_reports = AreaReport.all
+    area_reports.select {|report| report.user.group_id == group_id}.sort_by {|report| report.created_at}.each do |report|
       month = report.created_at.strftime("%B '%y")
       donation = report.donation
       if donations_by_month.include?(month)

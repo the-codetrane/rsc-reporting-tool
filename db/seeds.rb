@@ -19,15 +19,13 @@
 
 User.destroy_all
 Group.all.each do |group|
-  3.times do
     User.create!(email: Faker::Internet.unique.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
       group_id: group.id, sub_committee_id: 2, role_id: 1)
-    end
 end
 
 AreaReport.destroy_all
 Group.all.each do |group|
-  10.times do
+  3.times do
     attendees = ''
     (rand * 10).to_i.times {attendees << Faker::Name.name + ' '}
 

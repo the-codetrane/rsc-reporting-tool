@@ -1,4 +1,7 @@
-<h2>Monthly donations for <%= @groups.find(@group_id).name %>:</h2>
+<h2>Monthly donations for <strong><%= @groups.find(@group_id).name %></strong>:</h2>
 <div class="chart">
   <%= line_chart @donations %>
+</div>
+<div class='form-group'>
+
 </div>
