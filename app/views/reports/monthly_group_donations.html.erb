@@ -2,6 +2,9 @@
 <div class="chart">
   <%= line_chart @donations %>
 </div>
-<div class='form-group'>
-
+<div class='form'>
+  <%= form_tag do %>
+    <%= select_tag "group_id", options_from_collection_for_select(@groups.sort_by {|group| group.name}, "id", "name") %>
+    <%= submit_tag 'Render' %>
+  <% end %>
 </div>

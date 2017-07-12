@@ -3,6 +3,10 @@ class ReportsController < ApplicationController
 
   end
 
+  def chart
+    @group_id = params[:Group].to_i || 7
+  end
+
   def monthly_group_donations
     @groups = Group.all
     @group_id = @groups.sample.id
