@@ -1,0 +1,2 @@
+$('#chart-header').html('<h3>Monthly donations for <strong><%= j @groups.find(params[:group_id]).name %></strong>:</h3>')
+$('#chart').html('<%= j line_chart @donations %>')

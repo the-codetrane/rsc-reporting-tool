@@ -1,1 +1,9 @@
-<%= render 'group_donations_per_month' %>
+<%= javascript_include_tag 'application' %>
+<h2>Monthly donations for <strong><%= @groups.find(@group_id).name %></strong>:</h2>
+<div id='chart'>
+  <%= line_chart @donations %>
+</div>
+<%= form_tag(remote: true) do %>
+  <%= select_tag "group_id", options_from_collection_for_select(@groups.sort_by {|group| group.name}, "id", "name") %>
+  <%= submit_tag 'Render' %>
+<% end %>

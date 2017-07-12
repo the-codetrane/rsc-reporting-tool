@@ -1,21 +1,36 @@
 class ReportsController < ApplicationController
   def index
-
-  end
-
-  def chart
-    @group_id = params[:Group].to_i || 7
-  end
-
-  def monthly_group_donations
     @groups = Group.all
-    @group_id = @groups.sample.id
-
-    @donations = group_donations_per_month(@group_id)
+    @blank = {}
   end
 
-  def monthly_donations_by_all_groups
+  def create
 
+  end
+
+def monthly_chart_for_group
+  @groups = Group.all
+  @donations = group_donations_per_month(params[:group_id].to_i)
+  respond_to do |format|
+    format.html
+    format.js
+  end
+end
+
+def monthly_chart_for_all_groups
+  @groups = Group.all
+  respond_to do |format|
+    format.html
+    format.js
+  end
+end
+
+  def show
+
+  end
+
+  def update
+    @group_id = params[:group_id].to_i
   end
 
   private
@@ -35,5 +50,6 @@ class ReportsController < ApplicationController
     donations_by_month
   end
 
-
+  def donations(date_range)
+  end
 end

@@ -1,0 +1,8 @@
+<div id='chart-header'><h3>Please Select a Date Range</h3></div>
+<div id='chart'><%= pie_chart @blank, donut: true %></div>
+<%= form_tag '/reports/monthly_chart_for_all_groups', :remote => true do %>
+  <%= select_tag "group_id", options_from_collection_for_select(@groups.sort_by {|group| group.name}, "id", "name") %>
+  <%= submit_tag 'Render'%>
+<% end %>
+<br />
+<%= link_to 'Return to Previous Page', reports_path %>
