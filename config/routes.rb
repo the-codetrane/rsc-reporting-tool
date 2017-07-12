@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/reports/monthly_chart_for_group', to: 'reports#monthly_chart_for_group'
   post '/reports/monthly_chart_for_group', to:'reports#monthly_chart_for_group'
   get '/reports/monthly_chart_for_all_groups', to: 'reports#monthly_chart_for_all_groups'
+  post '/reports/monthly_chart_for_all_groups', to: 'reports#monthly_chart_for_all_groups'
 
 
   scope '/admin' do

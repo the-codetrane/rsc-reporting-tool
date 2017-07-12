@@ -1,0 +1,2 @@
+$('#chart-header').html("<h3>Monthly donations for <strong><%= "#{Date::MONTHNAMES[params[:month].to_i]}" %></strong>:</h3>")
+$('#chart').html('<%= j pie_chart @donations, donut: true %>')

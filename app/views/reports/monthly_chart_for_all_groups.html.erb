@@ -1,7 +1,7 @@
-<div id='chart-header'><h3>Please Select a Date Range</h3></div>
-<div id='chart'><%= pie_chart @blank, donut: true %></div>
+<div id='chart-header'><h3>Please Select a Month</h3></div>
+<div id='chart'><%= pie_chart nil, donut: true %></div>
 <%= form_tag '/reports/monthly_chart_for_all_groups', :remote => true do %>
-  <%= select_tag "group_id", options_from_collection_for_select(@groups.sort_by {|group| group.name}, "id", "name") %>
+  <%= select_tag "month", options_for_select(@valid_months) %>
   <%= submit_tag 'Render'%>
 <% end %>
 <br />
