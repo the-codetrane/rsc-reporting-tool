@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
 
   def monthly_chart_for_group
     @groups = Group.all
+    @groups_for_select = AreaReport.all.map {|r| r.user.group}.uniq.sort_by{|g| g.name}
     @donations = group_donations_per_month(params[:group_id].to_i)
     respond_to do |format|
       format.html

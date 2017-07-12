@@ -1,7 +1,7 @@
 <div id='chart-header'><h3>Please Select a Group</h3></div>
 <div id='chart'><%= line_chart nil %></div>
 <%= form_tag '/reports/monthly_chart_for_group', :remote => true do %>
-  <%= select_tag "group_id", options_from_collection_for_select(@groups.sort_by {|group| group.name}, "id", "name") %>
+  <%= select_tag "group_id", options_from_collection_for_select(@groups_for_select, "id", "name") %>
   <%= submit_tag 'Render'%>
 <% end %>
 <br />
