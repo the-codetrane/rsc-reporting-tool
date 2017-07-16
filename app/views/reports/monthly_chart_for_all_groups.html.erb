@@ -2,7 +2,6 @@
 <div id='chart'><%= pie_chart nil, donut: true %></div>
 <%= form_tag '/reports/monthly_chart_for_all_groups', :remote => true do %>
   <%= select_tag "month", options_for_select(@valid_months) %>
-  <%= submit_tag 'Render'%>
 <% end %>
 <br />
 <%= link_to 'Return to Previous Page', reports_path %>

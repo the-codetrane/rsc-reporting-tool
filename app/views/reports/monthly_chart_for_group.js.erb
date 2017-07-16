@@ -1,2 +1,8 @@
-$('#chart-header').html('<h3>Monthly donations by <strong><%= j @groups.find(params[:group_id]).name %></strong>:</h3>')
-$('#chart').html('<%= j line_chart @donations %>')
+$('#chart-header').html('<h3>Monthly donations by <strong><%= j @groups.find(params[:group_id]).name %></strong>:</h3>');
+$('#chart').html('<%= j line_chart @donations %>');
+$('#chart').mousemove(function() {
+  var $valueLabel = $('tspan:contains(Value:)');
+  var $dollarValue = $valueLabel.next()
+  $valueLabel.html(' $');
+  $dollarValue.text($dollarValue.text().replace(" ", ","));
+})
