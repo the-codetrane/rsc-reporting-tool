@@ -10,6 +10,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
       <ul class="nav navbar-nav">
+        <% if @logged_in %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -17,7 +18,6 @@
             <li><%= link_to 'Sub-Committee Reports', sub_committee_reports_path %></li>
           </ul>
         </li>
-        <% if @logged_in %>
             <% if @logged_in.can_report %>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Submit
@@ -45,9 +45,9 @@
             <li><%= link_to "Hello, #{@logged_in.first_name} #{@logged_in.last_name}", edit_user_registration_path, data: {toggle: 'tooltip', placement: 'bottom', title: profile_tool_tip} %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% elsif current_page?(controller: 'devise/sessions', action: 'new' )%>
-            <li id="sign-in-nav"><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li id="sign-in-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>
         <% else %>
-            <li id="sign-in-nav"><%= link_to 'Sign in', new_user_session_path %></li>
+            <li id="sign-in-nav"><%= link_to 'Sign In', new_user_session_path %></li>
         <% end %>
       </ul>
     </div>

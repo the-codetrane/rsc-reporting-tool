@@ -4,8 +4,8 @@ require_relative '../support/login_helper'
 feature 'Reports Dashboard' do
 
   before(:all) do
-    FactoryGirl.create_list(:admin, 4)
-    FactoryGirl.create(:role)
+    FactoryBot.create_list(:admin, 4)
+    FactoryBot.create(:role)
   end
 
   scenario 'User should see the link to create a sub-committee report' do

@@ -4,17 +4,18 @@ require_relative '../support/login_helper'
 feature 'Admin Dashboard' do
 
   before(:all) do
-    FactoryGirl.create_list(:admin, 4)
-    FactoryGirl.create(:role)
+    FactoryBot.create_list(:admin, 4)
+    FactoryBot.create(:role)
   end
 
   context 'Member login' do
-    let(:group) { FactoryGirl.create(:group) }
-    let(:sub_committee) { FactoryGirl.create(:sub_committee) }
-    let(:area) { FactoryGirl.create(:area) }
+    let(:admin) {FactoryBot.create(:admin)}
+    let(:group) { FactoryBot.create(:group) }
+    let(:sub_committee) { FactoryBot.create(:sub_committee) }
+    let(:area) { FactoryBot.create(:area) }
 
     scenario 'Member should see, but not edit reports' do
-      sign_up_regular
+      login_as admin, scope: :user
       User.last.update(group: group, sub_committee: sub_committee)
       AreaReport.create(area: area, created_by: User.first.email)
 

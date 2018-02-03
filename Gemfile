@@ -12,7 +12,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'sdoc', '>= 0.4.0', group: :doc
 gem 'bcrypt', '>= 3.1.7'
-gem 'pg'
+gem 'pg', '~> 0.18.0'
 gem 'select2-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-datatables-rails', '~> 3.4.0'
@@ -31,7 +31,7 @@ gem 'figaro'
 gem 'puma'
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'

@@ -11,9 +11,9 @@ describe User do
   end
 
   describe 'Instance Methods' do
-    let(:user) {FactoryGirl.create(:user)}
-    let(:role) {FactoryGirl.create(:role)}
-    let(:admin) {FactoryGirl.create(:admin)}
+    let(:user) {FactoryBot.create(:user)}
+    let(:role) {FactoryBot.create(:role)}
+    let(:admin) {FactoryBot.create(:admin)}
 
     it 'Displays NA Name' do
       expect(user.na_name).to eq("#{user.first_name} #{user.last_name.chr}")

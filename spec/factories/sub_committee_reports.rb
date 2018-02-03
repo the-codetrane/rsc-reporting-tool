@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :sub_committee_report do
     title Faker::Company.buzzword << ' Report'
     attendees { resp = ''; 10.times { resp << Faker::Name.name + ', ' }; resp << Faker::Name.name; resp }

@@ -4,14 +4,14 @@ require_relative '../support/login_helper'
 feature 'Admin Dashboard' do
 
   before(:all) do
-    FactoryGirl.create_list(:admin, 4)
-    FactoryGirl.create(:role)
+    FactoryBot.create_list(:admin, 4)
+    FactoryBot.create(:role)
   end
 
   context 'Admin login' do
-    let(:group) { FactoryGirl.create(:group) }
-    let(:sub_committee) { FactoryGirl.create(:sub_committee) }
-    let(:area) { FactoryGirl.create(:area) }
+    let(:group) { FactoryBot.create(:group) }
+    let(:sub_committee) { FactoryBot.create(:sub_committee) }
+    let(:area) { FactoryBot.create(:area) }
 
     scenario 'Admin should see the Admin link' do
       sign_up_admin

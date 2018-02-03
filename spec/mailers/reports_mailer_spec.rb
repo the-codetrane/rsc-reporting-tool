@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe ReportsMailer do
 
-  let(:users) { FactoryGirl.create_list(:user, 5) }
-  let(:sub_committee) { FactoryGirl.create(:sub_committee) }
-  let(:report) { FactoryGirl.create(:sub_committee_report, sub_committee_id: SubCommittee.last.id) }
-  let(:group) { FactoryGirl.create(:group) }
-  let(:area) { FactoryGirl.create(:area) }
+  let(:users) { FactoryBot.create_list(:user, 5) }
+  let(:sub_committee) { FactoryBot.create(:sub_committee) }
+  let(:report) { FactoryBot.create(:sub_committee_report, sub_committee_id: SubCommittee.last.id) }
+  let(:group) { FactoryBot.create(:group) }
+  let(:area) { FactoryBot.create(:area) }
 
   before(:each) {
     users.each { |u| u.update(sub_committee_id: sub_committee.id, group_id: group.id) }
@@ -34,8 +34,8 @@ describe ReportsMailer do
   end
 
   describe 'Regional Report' do
-    let(:sub_committees) { FactoryGirl.create_list(:sub_committee, 5) }
-    let(:reports) { FactoryGirl.create_list(:sub_committee_report, 5, sub_committee_id: SubCommittee.last.id) }
+    let(:sub_committees) { FactoryBot.create_list(:sub_committee, 5) }
+    let(:reports) { FactoryBot.create_list(:sub_committee_report, 5, sub_committee_id: SubCommittee.last.id) }
 
     it 'aggregates all sub_committee reports submitted' do
       expect(reports.count).to eq 5

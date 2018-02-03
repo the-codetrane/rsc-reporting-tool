@@ -66,7 +66,10 @@ RSpec.configure do |config|
   config.append_after(:each) do
     DatabaseCleaner.clean
   end
+end
 
+RSpec.configure do |config|
+  config.include Warden::Test::Helpers
 end
 
 Shoulda::Matchers.configure do |config|

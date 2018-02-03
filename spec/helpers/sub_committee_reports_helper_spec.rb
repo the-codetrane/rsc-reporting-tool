@@ -7,8 +7,8 @@ describe SubCommitteeReportsHelper do
 
   it 'returns a signature for reports' do
 
-    group = FactoryGirl.create(:group)
-    user = FactoryGirl.create(:user)
+    group = FactoryBot.create(:group)
+    user = FactoryBot.create(:user)
     user.update(group_id: group.id)
     response = report_signature(user)
     expect(response).to include(user.first_name)

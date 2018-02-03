@@ -3,8 +3,8 @@ require 'rails_helper'
 feature 'Registration' do
 
   before(:all) do
-    FactoryGirl.create_list(:admin, 4)
-    FactoryGirl.create(:role)
+    FactoryBot.create_list(:admin, 4)
+    FactoryBot.create(:role)
   end
 
   scenario 'User signs up successfully' do
