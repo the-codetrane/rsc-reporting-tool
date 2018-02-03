@@ -5,9 +5,8 @@ class BmltApi
   attr_reader :url
   attr_accessor :response
 
-  def initialize(url)
+  def initialize(url = JSON_ENDPOINT)
     @url = url
-    @response = nil
   end
 
   def query
