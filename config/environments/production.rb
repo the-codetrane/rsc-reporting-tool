@@ -14,9 +14,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.smtp_settings = {
-      address: 'usm17.siteground.biz',
+      address: 'mail.naworks.org',
       port: 465,
-      domain: 'do-not-repll.naworks.org',
+      domain: 'do-not-reply.naworks.org',
       authentication: 'plain',
       enable_starttls_auto: true,
       user_name: ENV['MAIL_USER'],
